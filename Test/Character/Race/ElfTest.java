@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ElfTest {
     Elf elf;
+    Human human = new Human();
     Strength strength;
     Constitution constitution;
     Intelligence intelligence;
