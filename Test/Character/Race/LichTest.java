@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ElfTest {
-    Elf elf;
+class LichTest {
+    Lich lich;
     Strength strength;
     Constitution constitution;
     Intelligence intelligence;
@@ -19,7 +19,7 @@ class ElfTest {
 
     @BeforeEach
     void setUp() {
-        elf = new Elf();
+        lich = new Lich();
         strength = new Strength(5);
         constitution = new Constitution(5);
         intelligence = new Intelligence(5);
@@ -31,30 +31,30 @@ class ElfTest {
     }
 
     @Test
-    void initialValue_modifierElfStrength_ValueModified() {
-        int expected = 0;
-        int valueModified = elf.modifier(strength);
+    void initialValue_modifierLichStrength_ValueModified() {
+        int expected = 3;
+        int valueModified = lich.modifier(strength);
         assertEquals(expected, valueModified);
     }
 
     @Test
-    void initialValue_modifierElfConstitution_ValueModified() {
-        int expected = -1;
-        int valuedModified = elf.modifier(constitution);
+    void initialValue_modifierLichConstitution_ValueModified() {
+        int expected = -3;
+        int valuedModified = lich.modifier(constitution);
         assertEquals(expected, valuedModified);
     }
 
     @Test
-    void initialValue_modifierElfIntelligence_ValueModified() {
-        int expected = 3;
-        int valuedModified = elf.modifier(intelligence);
+    void initialValue_modifierLichIntelligence_ValueModified() {
+        int expected = 5;
+        int valuedModified = lich.modifier(intelligence);
         assertEquals(expected, valuedModified);
     }
 
     @Test
-    void initialValue_modifierElfDexterity_ValueModified() {
-        int expected = 3;
-        int valuedModified = elf.modifier(dexterity);
+    void initialValue_modifierLichDexterity_ValueModified() {
+        int expected = 0;
+        int valuedModified = lich.modifier(dexterity);
         assertEquals(expected, valuedModified);
     }
 }

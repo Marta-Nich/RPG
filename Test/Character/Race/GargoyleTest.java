@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ElfTest {
-    Elf elf;
+class GargoyleTest {
+    Gargoyle gargoyle;
     Strength strength;
     Constitution constitution;
     Intelligence intelligence;
@@ -19,7 +19,7 @@ class ElfTest {
 
     @BeforeEach
     void setUp() {
-        elf = new Elf();
+        gargoyle = new Gargoyle();
         strength = new Strength(5);
         constitution = new Constitution(5);
         intelligence = new Intelligence(5);
@@ -31,30 +31,30 @@ class ElfTest {
     }
 
     @Test
-    void initialValue_modifierElfStrength_ValueModified() {
+    void initialValue_modifierGargoyleStrength_ValueModified() {
         int expected = 0;
-        int valueModified = elf.modifier(strength);
+        int valueModified = gargoyle.modifier(strength);
         assertEquals(expected, valueModified);
     }
 
     @Test
-    void initialValue_modifierElfConstitution_ValueModified() {
+    void initialValue_modifierGargoyleConstitution_ValueModified() {
+        int expected = 3;
+        int valuedModified = gargoyle.modifier(constitution);
+        assertEquals(expected, valuedModified);
+    }
+
+    @Test
+    void initialValue_modifierGargoyleIntelligence_ValueModified() {
         int expected = -1;
-        int valuedModified = elf.modifier(constitution);
+        int valuedModified = gargoyle.modifier(intelligence);
         assertEquals(expected, valuedModified);
     }
 
     @Test
-    void initialValue_modifierElfIntelligence_ValueModified() {
+    void initialValue_modifierGargoyleDexterity_ValueModified() {
         int expected = 3;
-        int valuedModified = elf.modifier(intelligence);
-        assertEquals(expected, valuedModified);
-    }
-
-    @Test
-    void initialValue_modifierElfDexterity_ValueModified() {
-        int expected = 3;
-        int valuedModified = elf.modifier(dexterity);
+        int valuedModified = gargoyle.modifier(dexterity);
         assertEquals(expected, valuedModified);
     }
 }
