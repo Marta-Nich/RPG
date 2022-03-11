@@ -26,37 +26,37 @@ class StatMockTest {
     }
 
     @Test
-    void initialValue_GetValue_ReturnValue() {
+    void initialValue_GetStatValue_ReturnValue() {
         assertEquals(initialValue, statMonk.getValue());
     }
 
     @Test
-    void initialValue_Increase_ValueIncreased() {
+    void initialValue_IncreaseStat_ValueIncreased() {
         statMonk.increase();
         assertEquals(initialValue + 1, statMonk.getValue());
     }
 
     @Test
-    void initialValueMas0_Decrease_ValueDecreased() {
+    void initialValueMas0_DecreaseStat_ValueDecreased() {
         statMonk.decrease();
         assertEquals(initialValue - 1, statMonk.getValue());
     }
 
     @Test
-    void initialValue0_Decrease_ValueDecreased() {
+    void initialValue0_DecreaseStat_ValueDecreased() {
         statMonk0.decrease();
         assertEquals(initialValue0, statMonk0.getValue());
     }
 
     @Test
-    void initialValueMenos0_Decrease_ValueDecreased() {
+    void initialValueMenos0_DecreaseStat_ValueDecreased() {
         statMonkMenos0.decrease();
         assertEquals(initialValueMenos0, statMonkMenos0.getValue());
     }
 
     @Test
-    void initialValue_testToString_ReturnString() {
-        assertEquals("Stat{value=5}", statMonk.toString());
+    void initialValue_testToStringStat_ReturnString() {
+        assertEquals("Stat{value="+initialValue+"}", statMonk.toString());
     }
 
 }

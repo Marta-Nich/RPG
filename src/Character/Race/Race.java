@@ -9,10 +9,13 @@ public abstract class Race {
     @Override
 //Devuelve true si son la misma clase
     public boolean equals(Object obj) {
-//        if () {
-//            return true;
-//        }
-        return false;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        return getClass() == obj.getClass();
     }
 
     @Override
