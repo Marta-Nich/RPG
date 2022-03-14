@@ -8,6 +8,7 @@ public abstract class Race {
     public abstract int modifier(Stat stat);
 
     //Devuelve true si son la misma clase
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;

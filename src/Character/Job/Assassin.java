@@ -1,18 +1,18 @@
-package Character.Race;
+package Character.Job;
 
 import Character.Stat.*;
 
-public class Elf extends Race {
+public class Assassin extends Job {
     @Override
     public int modifier(Stat stat) {
         if (stat instanceof Dexterity) {
             return 3;
         }
-        if (stat instanceof Intelligence) {
-            return 3;
+        if (stat instanceof Strength) {
+            return 1;
         }
         if (stat instanceof Constitution) {
-            return -1;
+            return 1;
         }
         return 0;
     }

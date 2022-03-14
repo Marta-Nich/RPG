@@ -38,10 +38,24 @@ class ElfTest {
     }
 
     @Test
+    void initialValueFalse_modifierElfStrength_ValueModified() {
+        int expected = 1;
+        int valueModified = elf.modifier(strength);
+        assertNotEquals(expected, valueModified);
+    }
+
+    @Test
     void initialValue_modifierElfConstitution_ValueModified() {
         int expected = -1;
         int valuedModified = elf.modifier(constitution);
         assertEquals(expected, valuedModified);
+    }
+
+    @Test
+    void initialValueFalse_modifierElfConstitution_ValueModified() {
+        int expected = 1;
+        int valuedModified = elf.modifier(constitution);
+        assertNotEquals(expected, valuedModified);
     }
 
     @Test
@@ -50,11 +64,24 @@ class ElfTest {
         int valuedModified = elf.modifier(intelligence);
         assertEquals(expected, valuedModified);
     }
+    @Test
+    void initialValueFalse_modifierElfIntelligence_ValueModified() {
+        int expected = 1;
+        int valuedModified = elf.modifier(intelligence);
+        assertNotEquals(expected, valuedModified);
+    }
 
     @Test
     void initialValue_modifierElfDexterity_ValueModified() {
         int expected = 3;
         int valuedModified = elf.modifier(dexterity);
         assertEquals(expected, valuedModified);
+    }
+
+    @Test
+    void initialValueFalse_modifierElfDexterity_ValueModified() {
+        int expected = 1;
+        int valuedModified = elf.modifier(dexterity);
+        assertNotEquals(expected, valuedModified);
     }
 }
