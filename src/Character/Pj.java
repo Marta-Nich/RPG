@@ -61,16 +61,16 @@ public class Pj {
 
     @Override
     public String toString() {
-        return "My name is "+name+"."+
-                "I’m an "+getRace()+" "+getJob()+
-                "My stats are: "+
-                "Strength: "+strength+
-                "Dexterity: "+dexterity+
-                "Constitution: "+constitution+
-                "Velocity: "+velocity()+
-                "Power: "+power()+
-                "Magic: "+magic()+
-                "Health: "+
+        return "My name is " + name + "." +
+                "I’m an " + getRace() + " " + getJob() +
+                "My stats are: " +
+                "Strength: " + strength +
+                "Dexterity: " + dexterity +
+                "Constitution: " + constitution +
+                "Velocity: " + velocity() +
+                "Power: " + power() +
+                "Magic: " + magic() +
+                "Health: " ;
 
     }
 }
