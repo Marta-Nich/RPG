@@ -7,7 +7,7 @@ import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
 import Character.Stat.Strength;
 
-public class Pj {
+public class Pj implements IDamagrable {
     private String name;
 
     public String getName() {
@@ -70,7 +70,33 @@ public class Pj {
                 "Velocity: " + velocity() +
                 "Power: " + power() +
                 "Magic: " + magic() +
-                "Health: " ;
+                "Health: ";
+
+    }
+
+    @Override
+    public double maxHealth() {
+        double maxHealth = 25 * (constitution.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
+        return maxHealth;
+    }
+
+    @Override
+    public double health() {
+        return 0;
+    }
+
+    @Override
+    public boolean isDead() {
+        return false;
+    }
+
+    @Override
+    public void receivesDamage(double amount) {
+
+    }
+
+    @Override
+    public void heals(double amount) {
 
     }
 }
