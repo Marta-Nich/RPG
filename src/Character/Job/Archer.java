@@ -20,4 +20,8 @@ public class Archer extends Job {
         }
         return 0;
     }
+    /*
+    * Iequipable extends (Ipicable extends Idropablreextends Iidentificablrd)*/
+    /*Pj lista de slots
+    * manager del equipo*/
 }

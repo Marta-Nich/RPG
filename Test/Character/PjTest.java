@@ -38,40 +38,89 @@ class PjTest {
     }
 
     @Test
-    void nameExpected_getNamePj_RetunName() {
+    void nameExpected_GetNamePj_RetunName() {
         String expected = "M";
         assertEquals(expected, pj.getName());
     }
 
     @Test
-    void raceExpected_getRacePj_RetunRace() {
+    void raceExpected_GetRacePj_RetunRace() {
         assertEquals(elf, pj.getRace());
     }
 
     @Test
-    void jobExpected_getJobPj_RetuenJob() {
+    void jobExpected_GetJobPj_RetuenJob() {
         assertEquals(archer, pj.getJob());
     }
 
     @Test
-    void initialValue_velocityPJ_ReturnVelocity() {
+    void initialValue_VelocityPJ_ReturnVelocity() {
         double expected = 30;
         assertEquals(expected, pj.velocity());
     }
 
     @Test
-    void initialValue_powerPj_ReturnPower() {
+    void initialValue_PowerPj_ReturnPower() {
         double expected = 30;
-        assertEquals(expected,pj.power());
+        assertEquals(expected, pj.power());
     }
 
     @Test
-    void initialValue_magicPj_ReturnMagic() {
+    void initialValue_MagicPj_ReturnMagic() {
         double expected = 30;
-        assertEquals(expected,pj.velocity());
+        assertEquals(expected, pj.velocity());
     }
 
     @Test
-    void initialSting_testToStringPj_ReturnString() {
+    void initialSting_TestToStringPj_ReturnString() {
+    }
+
+    //
+    @Test
+    void initialHealth_MaxHealthPj_ReturnMaxHealth() {
+        double expected = 375;
+        assertEquals(expected, pj.maxHealth());
+    }
+
+    @Test
+    void initialHealth_HealthPj_ReturnHealth() {
+        double expected = 375;
+        assertEquals(expected, pj.health());
+    }
+
+    @Test
+    void initialHealth_Health0Pj_ReturnHealth() {
+        double expected = 375-375;
+        pj.receivesDamage(375);
+        assertEquals(expected, pj.health());
+    }
+
+    @Test
+    void initialValue_iIDeadPj_ReturnTrue() {
+        pj.receivesDamage(375);
+        assertTrue(pj.isDead());
+    }
+
+    @Test
+    void initialValue_iIDeadPj_ReturnFalse() {
+        assertFalse(pj.isDead());
+    }
+
+    @Test
+    void initialValue_receivesDamagePj_ReturnDamage() {
+        double expected = 375 - 25;
+        pj.receivesDamage(25);
+        assertEquals(expected, pj.health());
+    }
+
+    @Test
+    void initialHealth_HealthMenos0Pj_ReturnHealth() {
+        double expected = 0;
+        pj.receivesDamage(376);
+        assertEquals(expected, pj.health());
+    }
+
+    @Test
+    void heals() {
     }
 }

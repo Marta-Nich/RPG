@@ -26,8 +26,6 @@ public abstract class Stat {
     //Devuelve el nombre simple de la clase
     @Override
     public String toString() {
-        return "Stat{" +
-                "value=" + value +
-                '}';
+        return "" + +value + "";
     }
 }

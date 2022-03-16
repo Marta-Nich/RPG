@@ -20,6 +20,6 @@ public abstract class Job {
 
     @Override
     public String toString() {
-        return super.toString();
+        return getClass().getSimpleName();
     }
 }
