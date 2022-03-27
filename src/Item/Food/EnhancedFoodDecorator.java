@@ -1,21 +1,28 @@
 package Item.Food;
 
 import Character.Pj;
+import Item.IConsumable;
 
-public abstract class EnhancedFoodDecorator extends Food {
-    private Food food;
+public class EnhancedFoodDecorator implements IConsumable {
+    private final IConsumable enhancedFoodDecorated;
 
-    public EnhancedFoodDecorator(Food food) {
-        super(food.getPower());
+    public EnhancedFoodDecorator(IConsumable enhancedFoodDecorated) {
+        this.enhancedFoodDecorated = enhancedFoodDecorated;
+    }
+
+    @Override
+    public double power() {
+        return enhancedFoodDecorated.power();
     }
 
     @Override
     public void consumedBy(Pj pj) {
-        pj.heals(food.getPower() * 2);
-
+        pj.heals(this.power() * 2);
     }
 
-    //    public EnhancedFoodDecorator(Food food) {
-//        super(food.getPower() * 2);
-//    }
+    @Override
+    public String toString() {
+        return "EnhancedFoodDecorator { " + enhancedFoodDecorated +
+                " }";
+    }
 }

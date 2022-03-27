@@ -6,9 +6,7 @@ import Character.Stat.Constitution;
 import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
 import Character.Stat.Strength;
-import Item.Food.Food;
 import Item.IConsumable;
-import Item.Item;
 
 public class Pj implements IDamageable {
     private String name;

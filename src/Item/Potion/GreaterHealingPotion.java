@@ -1,7 +1,15 @@
 package Item.Potion;
 
-public class GreaterHealingPotion extends Potion{
+public class GreaterHealingPotion extends Potion {
+    private double power = 100;
+
     public GreaterHealingPotion() {
         super(100);
     }
+
+    @Override
+    public double power() {
+        return power;
+    }
+
 }

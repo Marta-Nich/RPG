@@ -17,39 +17,60 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PjTest {
-    Pj pj;
     Elf elf;
     Archer archer;
+
     Strength strength;
     Constitution constitution;
     Intelligence intelligence;
     Dexterity dexterity;
+
+    Pj pj;
+
     Apple apple;
     BeansWithCod beansWithCod;
     Bread bread;
     Chicken chicken;
     LeekCream leekCream;
+
     MinorHealingPotion minorHealingPotion;
     HealingPotion healingPotion;
     GreaterHealingPotion greaterHealingPotion;
+
+    EnhancedFoodDecorator enhancedFoodDecoratorApple;
+    EnhancedFoodDecorator enhancedFoodDecoratorBeansWithCod;
+    EnhancedFoodDecorator enhancedFoodDecoratorBread;
+    EnhancedFoodDecorator enhancedFoodDecoratorChicken;
+    EnhancedFoodDecorator enhancedFoodDecoratorLeekCream;
 
     @BeforeEach
     void setUp() {
         elf = new Elf();
         archer = new Archer();
+
         strength = new Strength(5);
         constitution = new Constitution(5);
         intelligence = new Intelligence(5);
         dexterity = new Dexterity(5);
+
         pj = new Pj("M", elf, archer, strength, dexterity, constitution, intelligence);
+
         apple = new Apple();
         beansWithCod = new BeansWithCod();
         bread = new Bread();
         chicken = new Chicken();
         leekCream = new LeekCream();
+
         minorHealingPotion = new MinorHealingPotion();
         healingPotion = new HealingPotion();
         greaterHealingPotion = new GreaterHealingPotion();
+
+        enhancedFoodDecoratorApple = new EnhancedFoodDecorator(apple);
+        enhancedFoodDecoratorBeansWithCod = new EnhancedFoodDecorator(beansWithCod);
+        enhancedFoodDecoratorBread = new EnhancedFoodDecorator(bread);
+        enhancedFoodDecoratorChicken = new EnhancedFoodDecorator(chicken);
+        enhancedFoodDecoratorLeekCream = new EnhancedFoodDecorator(leekCream);
+
     }
 
     @AfterEach
@@ -239,6 +260,35 @@ class PjTest {
         double expected = 375 - 100 + 100;
         pj.receivesDamage(100);
         pj.consumes(greaterHealingPotion);
+        assertEquals(expected, pj.health());
+    }
+
+    @Test
+    void initialHealth_consumesEnhancedFoodDecoratorBeansWithCod_ReturnHeals() {
+        double expected = 375 - 225 + 200;
+        pj.receivesDamage(225);
+        pj.consumes(enhancedFoodDecoratorBeansWithCod);
+        assertEquals(expected, pj.health());
+    }
+    @Test
+    void initialHealth_consumesEnhancedFoodDecoratorBread_ReturnHeals() {
+        double expected = 375 - 100 + 20;
+        pj.receivesDamage(100);
+        pj.consumes(enhancedFoodDecoratorBread);
+        assertEquals(expected, pj.health());
+    }
+    @Test
+    void initialHealth_consumesEnhancedFoodDecoratorChicken_ReturnHeals() {
+        double expected = 375 - 100 + 50;
+        pj.receivesDamage(100);
+        pj.consumes(enhancedFoodDecoratorChicken);
+        assertEquals(expected, pj.health());
+    }
+    @Test
+    void initialHealth_consumesEnhancedFoodDecoratorApple_ReturnHeals() {
+        double expected = 375 - 105 + 100;
+        pj.receivesDamage(105);
+        pj.consumes(enhancedFoodDecoratorLeekCream);
         assertEquals(expected, pj.health());
     }
 }
