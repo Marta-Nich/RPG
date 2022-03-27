@@ -1,6 +1,6 @@
 package Character;
 
-public interface IDamagrable {
+public interface IDamageable {
     //(Valor base Constitution + bonif. raza + bonif.profesion)*25
     double maxHealth();
     //Devuelve el valor de vida actual
