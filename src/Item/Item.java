@@ -1,18 +1,17 @@
 package Item;
 
 import Inventory.Inventory;
+import Item.Stat.ItemStat;
+import Item.Stat.Weigth;
 
 public abstract class Item implements IPickable, IDropeable {
-    private double weight;
-
-    protected Item(double weight) {
-        this.weight = weight;
-    }
+    //Devuelve el modificador del stat
+    public abstract int modifier(ItemStat itemStat);
 
     @Override
     public void pickUpBy(Inventory inventory) {
-        if (inventory.getMaxWeight() > weight) {
-            if (inventory.currentWeigth() > weight)
+        if (inventory.getMaxWeight() > 0) {
+            if (inventory.currentWeigth() > 0)
                 inventory.add(this);
         }
     }

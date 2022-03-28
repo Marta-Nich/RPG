@@ -9,8 +9,7 @@ import Item.Item;
 public abstract class Potion extends Item implements IConsumable, IPickable, IDropeable {
     private double power;
 
-    public Potion(double power, double weigth) {
-        super(0);
+    public Potion(double power) {
         this.power = power;
     }
 

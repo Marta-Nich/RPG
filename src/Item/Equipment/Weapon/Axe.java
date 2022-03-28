@@ -3,12 +3,10 @@ package Item.Equipment.Weapon;
 import Item.Equipment.Weapon.Stat.Attack;
 import Item.Equipment.Weapon.Stat.Protection;
 import Item.Equipment.Weapon.Stat.WeaponStat;
+import Item.Stat.ItemStat;
+import Item.Stat.Weigth;
 
 public class Axe extends Weapon {
-
-    public Axe() {
-        super(8);
-    }
 
     @Override
     public int modifier(WeaponStat weaponStat) {
@@ -18,5 +16,13 @@ public class Axe extends Weapon {
             return 2;
         }
         return 2;
+    }
+
+    @Override
+    public int modifier(ItemStat itemStat) {
+        if (itemStat instanceof Weigth) {
+            return 8;
+        }
+        return 0;
     }
 }

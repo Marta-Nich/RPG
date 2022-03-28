@@ -6,8 +6,8 @@ import Character.Pj;
 
 public abstract class Food extends Item implements IConsumable {
 
-    public Food(double weigth) {
-        super(weigth);
+    public Food() {
+
     }
 
     @Override

@@ -1,11 +1,14 @@
 package Item.Potion;
 
 import Inventory.Inventory;
+import Item.Stat.ItemStat;
+import Item.Stat.Weigth;
 
-public class MinorHealingPotion extends Potion{
+public class MinorHealingPotion extends Potion {
     private double power = 25;
+
     public MinorHealingPotion() {
-        super(25,0.25);
+        super(25);
     }
 
     @Override
@@ -14,12 +17,10 @@ public class MinorHealingPotion extends Potion{
     }
 
     @Override
-    public void dropBy(Inventory inventory) {
-
-    }
-
-    @Override
-    public void pickUpBy(Inventory inventory) {
-
+    public int modifier(ItemStat itemStat) {
+        if (itemStat instanceof Weigth) {
+            return 1;
+        }
+        return 0;
     }
 }

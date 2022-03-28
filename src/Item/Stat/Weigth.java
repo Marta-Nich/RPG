@@ -1,14 +1,15 @@
-package Item.Equipment.Armor;
+package Item.Stat;
 
-import Item.Stat.ItemStat;
-import Item.Stat.Weigth;
+public class Weigth extends ItemStat {
 
-public class Boots extends Armor {
+    public Weigth(int value) {
+        super(value);
+    }
 
     @Override
     public int modifier(ItemStat itemStat) {
         if (itemStat instanceof Weigth) {
-            return 4;
+            return 3;
         }
         return 0;
     }

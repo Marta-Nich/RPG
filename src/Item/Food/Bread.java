@@ -2,13 +2,11 @@ package Item.Food;
 
 import Character.Pj;
 import Item.IConsumable;
+import Item.Stat.ItemStat;
+import Item.Stat.Weigth;
 
 public class Bread extends Food implements IConsumable {
     private double power = 10;
-
-    public Bread() {
-        super(1);
-    }
 
     @Override
     public double power() {
@@ -25,5 +23,13 @@ public class Bread extends Food implements IConsumable {
         return "Bread { " +
                 "power = " + power +
                 " }";
+    }
+
+    @Override
+    public int modifier(ItemStat itemStat) {
+        if (itemStat instanceof Weigth) {
+            return 2;
+        }
+        return 0;
     }
 }
