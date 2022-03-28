@@ -2,13 +2,10 @@ package Item.Potion;
 
 import Item.Stat.ItemStat;
 import Item.Stat.Weigth;
+import Character.Pj;
 
 public class HealingPotion extends Potion {
     private double power = 50;
-
-    public HealingPotion() {
-        super(50);
-    }
 
     @Override
     public double power() {
@@ -21,5 +18,17 @@ public class HealingPotion extends Potion {
             return 2;
         }
         return 0;
+    }
+
+    @Override
+    public void consumedBy(Pj pj) {
+        pj.heals(power());
+    }
+
+    @Override
+    public String toString() {
+        return "HealingPotion { " +
+                "power = " + power +
+                " }";
     }
 }

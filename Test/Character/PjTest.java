@@ -7,9 +7,7 @@ import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
 import Character.Stat.Strength;
 import Item.Food.*;
-import Item.Potion.GreaterHealingPotion;
-import Item.Potion.HealingPotion;
-import Item.Potion.MinorHealingPotion;
+import Item.Potion.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,9 +31,9 @@ class PjTest {
     Chicken chicken;
     LeekCream leekCream;
 
-    MinorHealingPotion minorHealingPotion;
     HealingPotion healingPotion;
-    GreaterHealingPotion greaterHealingPotion;
+    MiniorHealingPotionDecorator miniorHealingPotionDecorator;
+    GreatHealingPotionDecorator greatHealingPotionDecorator;
 
     EnhancedFoodDecorator enhancedFoodDecoratorApple;
     EnhancedFoodDecorator enhancedFoodDecoratorBeansWithCod;
@@ -61,9 +59,9 @@ class PjTest {
         chicken = new Chicken();
         leekCream = new LeekCream();
 
-        minorHealingPotion = new MinorHealingPotion();
         healingPotion = new HealingPotion();
-        greaterHealingPotion = new GreaterHealingPotion();
+        miniorHealingPotionDecorator = new MiniorHealingPotionDecorator(healingPotion);
+        greatHealingPotionDecorator = new GreatHealingPotionDecorator(healingPotion);
 
         enhancedFoodDecoratorApple = new EnhancedFoodDecorator(apple);
         enhancedFoodDecoratorBeansWithCod = new EnhancedFoodDecorator(beansWithCod);
@@ -240,10 +238,10 @@ class PjTest {
     }
 
     @Test
-    void initialHealth_consumesMinorHealingPotion_ReturnHeals() {
+    void initialHealth_consumesMinorHealingPotionDecorator_ReturnHeals() {
         double expected = 375 - 100 + 25;
         pj.receivesDamage(100);
-        pj.consumes(minorHealingPotion);
+        pj.consumes(miniorHealingPotionDecorator);
         assertEquals(expected, pj.health());
     }
 
@@ -256,10 +254,10 @@ class PjTest {
     }
 
     @Test
-    void initialHealth_consumesGreaterHealingPotion_ReturnHeals() {
+    void initialHealth_consumesGreaterHealingPotionDecorator_ReturnHeals() {
         double expected = 375 - 100 + 100;
         pj.receivesDamage(100);
-        pj.consumes(greaterHealingPotion);
+        pj.consumes(greatHealingPotionDecorator);
         assertEquals(expected, pj.health());
     }
 
@@ -270,6 +268,7 @@ class PjTest {
         pj.consumes(enhancedFoodDecoratorBeansWithCod);
         assertEquals(expected, pj.health());
     }
+
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorBread_ReturnHeals() {
         double expected = 375 - 100 + 20;
@@ -277,6 +276,7 @@ class PjTest {
         pj.consumes(enhancedFoodDecoratorBread);
         assertEquals(expected, pj.health());
     }
+
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorChicken_ReturnHeals() {
         double expected = 375 - 100 + 50;
@@ -284,6 +284,7 @@ class PjTest {
         pj.consumes(enhancedFoodDecoratorChicken);
         assertEquals(expected, pj.health());
     }
+
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorApple_ReturnHeals() {
         double expected = 375 - 105 + 100;

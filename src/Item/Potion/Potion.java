@@ -7,21 +7,21 @@ import Item.IPickable;
 import Item.Item;
 
 public abstract class Potion extends Item implements IConsumable, IPickable, IDropeable {
-    private double power;
 
-    public Potion(double power) {
-        this.power = power;
+    @Override
+    public double power() {
+        return 0;
     }
 
     @Override
     public void consumedBy(Pj pj) {
-        pj.heals(power);
+        pj.heals(power());
     }
 
     @Override
 
     public String toString() {
         return getClass().getSimpleName() +
-                " power = " + power;
+                " power = " + power();
     }
 }

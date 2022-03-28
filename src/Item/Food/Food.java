@@ -5,7 +5,6 @@ import Item.IConsumable;
 import Character.Pj;
 
 public abstract class Food extends Item implements IConsumable {
-
     public Food() {
 
     }
