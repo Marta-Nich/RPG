@@ -2,11 +2,15 @@ package Item.Potion;
 
 import Item.IConsumable;
 import Character.Pj;
+import Item.IDropeable;
+import Item.IPickable;
+import Item.Item;
 
-public abstract class Potion implements IConsumable {
+public abstract class Potion extends Item implements IConsumable, IPickable, IDropeable {
     private double power;
 
-    public Potion(double power) {
+    public Potion(double power, double weigth) {
+        super(0);
         this.power = power;
     }
 

@@ -3,8 +3,12 @@ package Item.Food;
 import Character.Pj;
 import Item.IConsumable;
 
-public class BeansWithCod implements IConsumable {
+public class BeansWithCod extends Food implements IConsumable {
     private double power = 100;
+
+    public BeansWithCod() {
+        super(3);
+    }
 
     @Override
     public double power() {

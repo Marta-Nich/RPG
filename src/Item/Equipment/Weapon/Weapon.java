@@ -1,12 +1,16 @@
 package Item.Equipment.Weapon;
 
+import Item.Equipment.Weapon.Stat.WeaponStat;
 import Item.Item;
 
-public class Weapon extends Item {
+public abstract class Weapon extends Item {
     private double attack;
 
     private double speed;
 
-    private int range;
+    public abstract int modifier(WeaponStat weaponStat);
 
+    public Weapon(double weigth) {
+        super(0);
+    }
 }

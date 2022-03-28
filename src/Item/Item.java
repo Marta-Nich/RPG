@@ -2,17 +2,18 @@ package Item;
 
 import Inventory.Inventory;
 
-public class Item implements IPickable, IDropeable {
+public abstract class Item implements IPickable, IDropeable {
     private double weight;
 
-    public double getWeight() {
-        return weight;
+    protected Item(double weight) {
+        this.weight = weight;
     }
 
     @Override
     public void pickUpBy(Inventory inventory) {
-        if (inventory.getWeight() > weight) {
-            inventory.add(this);
+        if (inventory.getMaxWeight() > weight) {
+            if (inventory.currentWeigth() > weight)
+                inventory.add(this);
         }
     }
 

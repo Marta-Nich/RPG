@@ -7,15 +7,23 @@ import Character.Pj;
 import java.util.LinkedList;
 
 public class Inventory {
-    private LinkedList<IPickable> items;
-    private double weight;
+    private Pj pj;
 
-    public double getWeight() {
-        return weight;
+    private LinkedList<IPickable> items;
+
+    private double maxWeight = pj.maxWeigth();
+
+    public double getMaxWeight() {
+        return maxWeight;
     }
 
-    public void weigth(Pj pj) {
-        weight += pj.maxWeigth();
+//    private double itemsWeigth = 0;
+
+    private double busyWeigth = 0;
+
+    public double currentWeigth() {
+        return busyWeigth;
+
     }
 
     public void add(IPickable pickable) {

@@ -3,10 +3,11 @@ package Item.Food;
 import Character.Pj;
 import Item.IConsumable;
 
-public class EnhancedFoodDecorator implements IConsumable {
+public class EnhancedFoodDecorator extends Food implements IConsumable {
     private final IConsumable enhancedFoodDecorated;
 
     public EnhancedFoodDecorator(IConsumable enhancedFoodDecorated) {
+        super(0);
         this.enhancedFoodDecorated = enhancedFoodDecorated;
     }
 
