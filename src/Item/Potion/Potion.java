@@ -7,6 +7,7 @@ import Item.Item;
 public abstract class Potion extends Item implements IConsumable {
     private int weigth = 0;
     private int slotSpace = 0;
+    private double power = 0;
 
     @Override
     public int slotSpace() {
@@ -20,7 +21,7 @@ public abstract class Potion extends Item implements IConsumable {
 
     @Override
     public double power() {
-        return 0;
+        return power;
     }
 
     @Override

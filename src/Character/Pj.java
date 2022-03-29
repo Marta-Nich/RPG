@@ -46,22 +46,26 @@ public class Pj implements IDamageable {
 
     //Peso que puede llevar en el inventario
     public double maxWeigth() {
-        return 3 * (strength.getValue() + constitution.getValue() + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
+        return 3 * (strength.getValue() + constitution.getValue() + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
     }
 
     //(Valor base Dexterity + bonif. raza + bonif.profesion)*2
     public double velocity() {
-        return 2 * (dexterity.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
+        return 2 * (dexterity.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
     }
 
     //(Valor base Strength + bonif. raza + bonif.profesion)*2
     public double power() {    /*Mas totalBonus*/
-        return (2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence)));
+        return (2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence)));
     }
 
     //(Valor base Intelligence + bonif. raza + bonif.profesion)*2
     public double magic() {
-        return 2 * (intelligence.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
+        return 2 * (intelligence.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
     }
 
     @Override
@@ -81,7 +85,8 @@ public class Pj implements IDamageable {
 
     @Override
     public double maxHealth() {
-        return 25 * (constitution.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
+        return 25 * (constitution.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
     }
 
     @Override
@@ -125,5 +130,4 @@ public class Pj implements IDamageable {
         consumable.consumedBy(this);
         System.out.println(getName() + " consumed: " + consumable);
     }
-
 }

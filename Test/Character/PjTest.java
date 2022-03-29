@@ -31,7 +31,7 @@ class PjTest {
     Chicken chicken;
     LeekCream leekCream;
 
-    HealingPotion healingPotion;
+    PotionMock healingPotion;
     MiniorHealingPotionDecorator miniorHealingPotionDecorator;
     GreatHealingPotionDecorator greatHealingPotionDecorator;
 
@@ -59,7 +59,7 @@ class PjTest {
         chicken = new Chicken();
         leekCream = new LeekCream();
 
-        healingPotion = new HealingPotion();
+        healingPotion = new PotionMock();
         miniorHealingPotionDecorator = new MiniorHealingPotionDecorator(healingPotion);
         greatHealingPotionDecorator = new GreatHealingPotionDecorator(healingPotion);
 
@@ -294,7 +294,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorApple_ReturnHeals() {
-        double expected = (125 - 105) + 10;
+        double expected = 125 - 105 + 10;
         pj.receivesDamage(105);
         pj.consumes(enhancedFoodDecoratorApple);
         assertEquals(expected, pj.health());
@@ -302,7 +302,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorLeekCream_ReturnHeals() {
-        double expected = (125 - 105) + 100;
+        double expected = 125 - 105 + 100;
         pj.receivesDamage(105);
         pj.consumes(enhancedFoodDecoratorLeekCream);
         assertEquals(expected, pj.health());

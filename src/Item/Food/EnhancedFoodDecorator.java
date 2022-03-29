@@ -12,13 +12,13 @@ public class EnhancedFoodDecorator extends Food implements IConsumable {
 
     @Override
     public double power() {
-        return food.power();
+        return food.power() * 2;
     }
 
     @Override
     public void consumedBy(Pj pj) {
-        if (pj.health() + (power() * 2) <= pj.maxHealth()) {
-            pj.heals(power() * 2);
+        if (pj.health() + (power()) <= pj.maxHealth()) {
+            pj.heals(power());
         } else {
             pj.heals(pj.maxHealth() - pj.health());
         }

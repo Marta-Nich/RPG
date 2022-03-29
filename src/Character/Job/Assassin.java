@@ -3,6 +3,7 @@ package Character.Job;
 import Character.Stat.*;
 
 public class Assassin extends Job {
+    //maria.donzel@iesecaminas.org;
     @Override
     public int modifier(Stat stat) {
         if (stat instanceof Dexterity) {

@@ -1,10 +1,9 @@
 package Item.Potion;
 
-import Item.IConsumable;
 import Character.Pj;
 
-public class GreatHealingPotionDecorator extends Potion{
-    private final IConsumable greatHealingPotionDecorated;
+public class GreatHealingPotionDecorator extends Potion {
+    private final Potion potion;
     private int weigth = 3;
     private int slotSpace = 1;
 
@@ -18,19 +17,19 @@ public class GreatHealingPotionDecorator extends Potion{
         return weigth;
     }
 
-    public GreatHealingPotionDecorator(IConsumable greatHealingPotionDecorated) {
-        this.greatHealingPotionDecorated = greatHealingPotionDecorated;
+    public GreatHealingPotionDecorator(Potion potion) {
+        this.potion = potion;
     }
 
     @Override
     public double power() {
-        return greatHealingPotionDecorated.power();
+        return potion.power() * 2;
     }
 
     @Override
     public void consumedBy(Pj pj) {
         if (pj.health() + (power() * 2) <= pj.maxHealth()) {
-            pj.heals(power() * 2);
+            pj.heals(power());
         } else {
             pj.heals(pj.maxHealth() - pj.health());
         }

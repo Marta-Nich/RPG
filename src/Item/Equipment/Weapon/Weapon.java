@@ -29,4 +29,11 @@ public abstract class Weapon extends Item implements IEquipable {
     public double totalBonus() {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "speed=" + speed +
+                '}';
+    }
 }
