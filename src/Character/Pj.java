@@ -44,8 +44,9 @@ public class Pj implements IDamageable {
         this.intelligence = intelligence;
     }
 
+    //Peso que puede llevar en el inventario
     public double maxWeigth() {
-        return 2 * (strength.getValue() + constitution.getValue() + race.modifier(strength) + race.modifier(constitution) + job.modifier(strength) + job.modifier(constitution));
+        return 3 * (strength.getValue() + constitution.getValue() + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
     }
 
     //(Valor base Dexterity + bonif. raza + bonif.profesion)*2
@@ -54,8 +55,8 @@ public class Pj implements IDamageable {
     }
 
     //(Valor base Strength + bonif. raza + bonif.profesion)*2
-    public double power() {
-        return 2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
+    public double power() {    /*Mas totalBonus*/
+        return (2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence) + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence)));
     }
 
     //(Valor base Intelligence + bonif. raza + bonif.profesion)*2
@@ -102,7 +103,7 @@ public class Pj implements IDamageable {
     @Override
     public void receivesDamage(double amount) {
         if (amount > 0) {
-            damage += amount;
+            damage += amount;  /*Menos bonusProtection*/
             System.out.println(getName() + " received " + amount + " damage. Health: " + health() + "/" + maxHealth());
         }
     }
@@ -116,6 +117,7 @@ public class Pj implements IDamageable {
             }
             damage -= amount;
             System.out.println(getName() + " healed " + amount + " life. Health: " + health() + "/" + maxHealth());
+
         }
     }
 

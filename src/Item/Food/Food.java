@@ -5,6 +5,19 @@ import Item.IConsumable;
 import Character.Pj;
 
 public abstract class Food extends Item implements IConsumable {
+    private int weigth = 0;
+    private int slotSpace = 0;
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
+    }
+
+    @Override
+    public int weigth() {
+        return weigth;
+    }
+
     public Food() {
 
     }
@@ -16,6 +29,10 @@ public abstract class Food extends Item implements IConsumable {
 
     @Override
     public void consumedBy(Pj pj) {
-        pj.heals(power());
+        if (pj.health() + power() <= pj.maxHealth()) {
+            pj.heals(power());
+        } else {
+            pj.heals(pj.maxHealth() - pj.health());
+        }
     }
 }

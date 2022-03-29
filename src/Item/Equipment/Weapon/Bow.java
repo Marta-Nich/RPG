@@ -1,10 +1,11 @@
-package Item.Equipment.Armor;
+package Item.Equipment.Weapon;
 
-public class Chestplate extends Armor {
-    private int powerAttack = 5;
-    private int weigth = 7;
-    private int protection = 7;
-    private int slotSpace = 1;
+public class Bow extends Weapon {
+    private int powerAttack = 3;
+    private int weigth = 5;
+    private int protection = 0;
+    private int slotSpace = 2;
+    private double speed = 2.5;
 
     @Override
     public int powerAttack() {
@@ -27,13 +28,23 @@ public class Chestplate extends Armor {
     }
 
     @Override
+    public double getSpeed() {
+        return speed;
+    }
+
+    @Override
     public double bonusAttack() {
-        return powerAttack * 2;
+        return powerAttack;
     }
 
     @Override
     public double nerfWeigth() {
         return weigth;
+    }
+
+    @Override
+    public double bonusSpeed() {
+        return speed;
     }
 
     @Override
@@ -43,6 +54,6 @@ public class Chestplate extends Armor {
 
     @Override
     public double totalBonus() {
-        return bonusAttack() - nerfWeigth();
+        return (bonusAttack() * bonusSpeed()) - nerfWeigth();
     }
 }

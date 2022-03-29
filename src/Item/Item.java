@@ -1,12 +1,20 @@
 package Item;
 
 import Inventory.Inventory;
-import Item.Stat.ItemStat;
-import Item.Stat.Weigth;
 
 public abstract class Item implements IPickable, IDropeable {
-    //Devuelve el modificador del stat
-    public abstract int modifier(ItemStat itemStat);
+    private int weigth = 0;
+    private int slotSpace = 0;
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
+    }
+
+    @Override
+    public int weigth() {
+        return weigth;
+    }
 
     @Override
     public void pickUpBy(Inventory inventory) {

@@ -1,12 +1,21 @@
 package Item.Food;
 
-import Character.Pj;
 import Item.IConsumable;
-import Item.Stat.ItemStat;
-import Item.Stat.Weigth;
 
 public class Chicken extends Food implements IConsumable {
     private double power = 25;
+    private int weigth = 3;
+    private int slotSpace = 1;
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
+    }
+
+    @Override
+    public int weigth() {
+        return weigth;
+    }
 
     @Override
     public double power() {
@@ -14,22 +23,9 @@ public class Chicken extends Food implements IConsumable {
     }
 
     @Override
-    public void consumedBy(Pj pj) {
-        pj.heals(power());
-    }
-
-    @Override
     public String toString() {
         return "Chicken { " +
                 "power = " + power +
                 " }";
-    }
-
-    @Override
-    public int modifier(ItemStat itemStat) {
-        if (itemStat instanceof Weigth) {
-            return 3;
-        }
-        return 0;
     }
 }

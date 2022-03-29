@@ -2,11 +2,21 @@ package Item.Food;
 
 import Character.Pj;
 import Item.IConsumable;
-import Item.Stat.ItemStat;
-import Item.Stat.Weigth;
 
 public class Apple extends Food implements IConsumable {
     private double power = 5;
+    private int weigth = 1;
+    private int slotSpace = 1;
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
+    }
+
+    @Override
+    public int weigth() {
+        return weigth;
+    }
 
     @Override
     public double power() {
@@ -14,22 +24,9 @@ public class Apple extends Food implements IConsumable {
     }
 
     @Override
-    public void consumedBy(Pj pj) {
-        pj.heals(power());
-    }
-
-    @Override
     public String toString() {
         return "Apple { " +
                 "power = " + power +
                 " }";
-    }
-
-    @Override
-    public int modifier(ItemStat itemStat) {
-        if (itemStat instanceof Weigth) {
-            return 1;
-        }
-        return 0;
     }
 }

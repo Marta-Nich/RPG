@@ -13,8 +13,8 @@ class JobMockTest {
 
     @BeforeEach
     void setUp() {
-        archer = new Archer();
-        archer2 = new Archer();
+        archer = new JobMock();
+        archer2 = new JobMock();
         assassin = new Assassin();
     }
 

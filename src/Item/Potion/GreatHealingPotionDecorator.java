@@ -1,11 +1,22 @@
 package Item.Potion;
 
 import Item.IConsumable;
-import Item.Stat.ItemStat;
 import Character.Pj;
 
-public class GreatHealingPotionDecorator extends Potion implements IConsumable {
+public class GreatHealingPotionDecorator extends Potion{
     private final IConsumable greatHealingPotionDecorated;
+    private int weigth = 3;
+    private int slotSpace = 1;
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
+    }
+
+    @Override
+    public int weigth() {
+        return weigth;
+    }
 
     public GreatHealingPotionDecorator(IConsumable greatHealingPotionDecorated) {
         this.greatHealingPotionDecorated = greatHealingPotionDecorated;
@@ -18,11 +29,10 @@ public class GreatHealingPotionDecorator extends Potion implements IConsumable {
 
     @Override
     public void consumedBy(Pj pj) {
-        pj.heals(this.power() * 2);
-    }
-
-    @Override
-    public int modifier(ItemStat itemStat) {
-        return 0;
+        if (pj.health() + (power() * 2) <= pj.maxHealth()) {
+            pj.heals(power() * 2);
+        } else {
+            pj.heals(pj.maxHealth() - pj.health());
+        }
     }
 }

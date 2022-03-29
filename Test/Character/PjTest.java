@@ -1,7 +1,7 @@
 package Character;
 
-import Character.Job.Archer;
-import Character.Race.Elf;
+import Character.Job.JobMock;
+import Character.Race.RaceMock;
 import Character.Stat.Constitution;
 import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
@@ -15,8 +15,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PjTest {
-    Elf elf;
-    Archer archer;
+    RaceMock raceMock;
+    JobMock jobMock;
 
     Strength strength;
     Constitution constitution;
@@ -43,15 +43,15 @@ class PjTest {
 
     @BeforeEach
     void setUp() {
-        elf = new Elf();
-        archer = new Archer();
+        raceMock = new RaceMock();
+        jobMock = new JobMock();
 
         strength = new Strength(5);
         constitution = new Constitution(5);
         intelligence = new Intelligence(5);
         dexterity = new Dexterity(5);
 
-        pj = new Pj("M", elf, archer, strength, dexterity, constitution, intelligence);
+        pj = new Pj("M", raceMock, jobMock, strength, dexterity, constitution, intelligence);
 
         apple = new Apple();
         beansWithCod = new BeansWithCod();
@@ -83,29 +83,35 @@ class PjTest {
 
     @Test
     void raceExpected_GetRacePj_RetunRace() {
-        assertEquals(elf, pj.getRace());
+        assertEquals(raceMock, pj.getRace());
     }
 
     @Test
     void jobExpected_GetJobPj_RetuenJob() {
-        assertEquals(archer, pj.getJob());
+        assertEquals(jobMock, pj.getJob());
+    }
+
+    @Test
+    void initialValue_maxWeigthPJ_ReturnVelocity() {
+        double expected = 30;
+        assertEquals(expected, pj.maxWeigth());
     }
 
     @Test
     void initialValue_VelocityPJ_ReturnVelocity() {
-        double expected = 30;
+        double expected = 10;
         assertEquals(expected, pj.velocity());
     }
 
     @Test
     void initialValue_PowerPj_ReturnPower() {
-        double expected = 30;
+        double expected = 10;
         assertEquals(expected, pj.power());
     }
 
     @Test
     void initialValue_MagicPj_ReturnMagic() {
-        double expected = 30;
+        double expected = 10;
         assertEquals(expected, pj.velocity());
     }
 
@@ -115,35 +121,35 @@ class PjTest {
                 " My stats are: Strength: " + strength + " " +
                 "Dexterity: " + dexterity + " " +
                 "Constitution: " + constitution + " " +
-                "Velocity: " + "30.0" + " " +
-                "Power: " + "30.0" + " " +
-                "Magic: " + "30.0" + " " +
-                "Health: " + "375.0";
+                "Velocity: " + "10.0" + " " +
+                "Power: " + "10.0" + " " +
+                "Magic: " + "10.0" + " " +
+                "Health: " + "125.0";
         assertEquals(expected, pj.toString());
     }
 
     @Test
     void initialHealth_MaxHealthPj_ReturnMaxHealth() {
-        double expected = 375;
+        double expected = 125;
         assertEquals(expected, pj.maxHealth());
     }
 
     @Test
     void initialHealth_HealthPj_ReturnHealth() {
-        double expected = 375;
+        double expected = 125;
         assertEquals(expected, pj.health());
     }
 
     @Test
     void initialHealth_Health0Pj_ReturnHealth() {
-        double expected = 375 - 375;
-        pj.receivesDamage(375);
+        double expected = 125 - 125;
+        pj.receivesDamage(125);
         assertEquals(expected, pj.health());
     }
 
     @Test
     void initialValue_iIDeadPj_ReturnTrue() {
-        pj.receivesDamage(375);
+        pj.receivesDamage(125);
         assertTrue(pj.isDead());
     }
 
@@ -154,14 +160,14 @@ class PjTest {
 
     @Test
     void initialValue_receivesDamagePj_ReturnDamage() {
-        double expected = 375 - 25;
+        double expected = 125 - 25;
         pj.receivesDamage(25);
         assertEquals(expected, pj.health());
     }
 
     @Test
     void initialValue_receivesDamageAmountNegativoPj_ReturnDamage() {
-        double expected = 375;
+        double expected = 125;
         pj.receivesDamage(-25);
         assertEquals(expected, pj.health());
     }
@@ -169,13 +175,13 @@ class PjTest {
     @Test
     void initialHealth_HealthMenos0Pj_ReturnHealth() {
         double expected = 0;
-        pj.receivesDamage(376);
+        pj.receivesDamage(1256);
         assertEquals(expected, pj.health());
     }
 
     @Test
     void initialHealth_healsPj_ReturnHeals() {
-        double expected = 375 - 70 + 5;
+        double expected = 125 - 70 + 5;
         pj.receivesDamage(70);
         pj.heals(5);
         assertEquals(expected, pj.health());
@@ -183,7 +189,7 @@ class PjTest {
 
     @Test
     void initialHealth_healsNegativoPj_ReturnHeals() {
-        double expected = 375 - 70 + 0;
+        double expected = 125 - 70 + 0;
         pj.receivesDamage(70);
         pj.heals(-5);
         assertEquals(expected, pj.health());
@@ -191,7 +197,7 @@ class PjTest {
 
     @Test
     void initialHealth_heals0Pj_ReturnHeals() {
-        double expected = 375 - 70 + 0;
+        double expected = 125 - 70 + 0;
         pj.receivesDamage(70);
         pj.heals(0);
         assertEquals(expected, pj.health());
@@ -199,7 +205,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesApple_ReturnHeals() {
-        double expected = 375 - 70 + 5;
+        double expected = 125 - 70 + 5;
         pj.receivesDamage(70);
         pj.consumes(apple);
         assertEquals(expected, pj.health());
@@ -207,15 +213,15 @@ class PjTest {
 
     @Test
     void initialHealth_consumesBeansWithCod_ReturnHeals() {
-        double expected = 375 - 150 + 100;
-        pj.receivesDamage(150);
+        double expected = 125 - 100 + 100;
+        pj.receivesDamage(100);
         pj.consumes(beansWithCod);
         assertEquals(expected, pj.health());
     }
 
     @Test
     void initialHealth_consumesBread_ReturnHeals() {
-        double expected = 375 - 70 + 10;
+        double expected = 125 - 70 + 10;
         pj.receivesDamage(70);
         pj.consumes(bread);
         assertEquals(expected, pj.health());
@@ -223,7 +229,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesChicken_ReturnHeals() {
-        double expected = 375 - 70 + 25;
+        double expected = 125 - 70 + 25;
         pj.receivesDamage(70);
         pj.consumes(chicken);
         assertEquals(expected, pj.health());
@@ -231,7 +237,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesLeekCream_ReturnHeals() {
-        double expected = 375 - 70 + 50;
+        double expected = 125 - 70 + 50;
         pj.receivesDamage(70);
         pj.consumes(leekCream);
         assertEquals(expected, pj.health());
@@ -239,7 +245,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesMinorHealingPotionDecorator_ReturnHeals() {
-        double expected = 375 - 100 + 25;
+        double expected = 125 - 100 + 25;
         pj.receivesDamage(100);
         pj.consumes(miniorHealingPotionDecorator);
         assertEquals(expected, pj.health());
@@ -247,7 +253,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesHealingPotion_ReturnHeals() {
-        double expected = 375 - 100 + 50;
+        double expected = 125 - 100 + 50;
         pj.receivesDamage(100);
         pj.consumes(healingPotion);
         assertEquals(expected, pj.health());
@@ -255,7 +261,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesGreaterHealingPotionDecorator_ReturnHeals() {
-        double expected = 375 - 100 + 100;
+        double expected = 125 - 100 + 100;
         pj.receivesDamage(100);
         pj.consumes(greatHealingPotionDecorator);
         assertEquals(expected, pj.health());
@@ -263,15 +269,16 @@ class PjTest {
 
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorBeansWithCod_ReturnHeals() {
-        double expected = 375 - 225 + 200;
-        pj.receivesDamage(225);
+        //Cura 200
+        double expected = 125;
+        pj.receivesDamage(100);
         pj.consumes(enhancedFoodDecoratorBeansWithCod);
         assertEquals(expected, pj.health());
     }
 
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorBread_ReturnHeals() {
-        double expected = 375 - 100 + 20;
+        double expected = 125 - 100 + 20;
         pj.receivesDamage(100);
         pj.consumes(enhancedFoodDecoratorBread);
         assertEquals(expected, pj.health());
@@ -279,7 +286,7 @@ class PjTest {
 
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorChicken_ReturnHeals() {
-        double expected = 375 - 100 + 50;
+        double expected = 125 - 100 + 50;
         pj.receivesDamage(100);
         pj.consumes(enhancedFoodDecoratorChicken);
         assertEquals(expected, pj.health());
@@ -287,7 +294,15 @@ class PjTest {
 
     @Test
     void initialHealth_consumesEnhancedFoodDecoratorApple_ReturnHeals() {
-        double expected = 375 - 105 + 100;
+        double expected = (125 - 105) + 10;
+        pj.receivesDamage(105);
+        pj.consumes(enhancedFoodDecoratorApple);
+        assertEquals(expected, pj.health());
+    }
+
+    @Test
+    void initialHealth_consumesEnhancedFoodDecoratorLeekCream_ReturnHeals() {
+        double expected = (125 - 105) + 100;
         pj.receivesDamage(105);
         pj.consumes(enhancedFoodDecoratorLeekCream);
         assertEquals(expected, pj.health());

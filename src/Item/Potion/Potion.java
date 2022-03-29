@@ -2,11 +2,21 @@ package Item.Potion;
 
 import Item.IConsumable;
 import Character.Pj;
-import Item.IDropeable;
-import Item.IPickable;
 import Item.Item;
 
-public abstract class Potion extends Item implements IConsumable, IPickable, IDropeable {
+public abstract class Potion extends Item implements IConsumable {
+    private int weigth = 0;
+    private int slotSpace = 0;
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
+    }
+
+    @Override
+    public int weigth() {
+        return weigth;
+    }
 
     @Override
     public double power() {
@@ -15,7 +25,11 @@ public abstract class Potion extends Item implements IConsumable, IPickable, IDr
 
     @Override
     public void consumedBy(Pj pj) {
-        pj.heals(power());
+        if (pj.health() + power() <= pj.maxHealth()) {
+            pj.heals(power());
+        } else {
+            pj.heals(pj.maxHealth() - pj.health());
+        }
     }
 
     @Override

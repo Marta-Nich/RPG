@@ -2,7 +2,6 @@ package Item.Food;
 
 import Character.Pj;
 import Item.IConsumable;
-import Item.Stat.ItemStat;
 
 public class EnhancedFoodDecorator extends Food implements IConsumable {
     private final IConsumable enhancedFoodDecorated;
@@ -18,17 +17,16 @@ public class EnhancedFoodDecorator extends Food implements IConsumable {
 
     @Override
     public void consumedBy(Pj pj) {
-        pj.heals(this.power() * 2);
+        if (pj.health() + (power() * 2) <= pj.maxHealth()) {
+            pj.heals(power() * 2);
+        } else {
+            pj.heals(pj.maxHealth() - pj.health());
+        }
     }
 
     @Override
     public String toString() {
         return "EnhancedFoodDecorator { " + enhancedFoodDecorated +
                 " }";
-    }
-
-    @Override
-    public int modifier(ItemStat itemStat) {
-        return 0;
     }
 }

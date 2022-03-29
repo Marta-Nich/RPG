@@ -1,28 +1,23 @@
 package Item.Potion;
 
-import Item.Stat.ItemStat;
-import Item.Stat.Weigth;
-import Character.Pj;
-
 public class HealingPotion extends Potion {
     private double power = 50;
+    private int weigth = 2;
+    private int slotSpace = 1;
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
+    }
+
+    @Override
+    public int weigth() {
+        return weigth;
+    }
 
     @Override
     public double power() {
         return power;
-    }
-
-    @Override
-    public int modifier(ItemStat itemStat) {
-        if (itemStat instanceof Weigth) {
-            return 2;
-        }
-        return 0;
-    }
-
-    @Override
-    public void consumedBy(Pj pj) {
-        pj.heals(power());
     }
 
     @Override
