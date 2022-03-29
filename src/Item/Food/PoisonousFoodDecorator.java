@@ -4,15 +4,15 @@ import Character.Pj;
 import Item.IConsumable;
 
 public class PoisonousFoodDecorator extends Food implements IConsumable {
-    private final IConsumable poisonousFoodDecorated;
+    private final Food food;
 
-    protected PoisonousFoodDecorator(IConsumable poisonousFoodDecorated) {
-        this.poisonousFoodDecorated = poisonousFoodDecorated;
+    protected PoisonousFoodDecorator(Food food) {
+        this.food = food;
     }
 
     @Override
     public double power() {
-        return poisonousFoodDecorated.power();
+        return food.power();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class PoisonousFoodDecorator extends Food implements IConsumable {
 
     @Override
     public String toString() {
-        return "PoisonousFoodDecorator { " + poisonousFoodDecorated +
+        return "PoisonousFoodDecorator { " + food +
                 " }";
     }
 }

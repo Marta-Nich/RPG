@@ -4,15 +4,15 @@ import Character.Pj;
 import Item.IConsumable;
 
 public class EnhancedFoodDecorator extends Food implements IConsumable {
-    private final IConsumable enhancedFoodDecorated;
+    private final Food food;
 
-    public EnhancedFoodDecorator(IConsumable enhancedFoodDecorated) {
-        this.enhancedFoodDecorated = enhancedFoodDecorated;
+    public EnhancedFoodDecorator(Food food) {
+        this.food = food;
     }
 
     @Override
     public double power() {
-        return enhancedFoodDecorated.power();
+        return food.power();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class EnhancedFoodDecorator extends Food implements IConsumable {
 
     @Override
     public String toString() {
-        return "EnhancedFoodDecorator { " + enhancedFoodDecorated +
+        return "EnhancedFoodDecorator { " + food +
                 " }";
     }
 }

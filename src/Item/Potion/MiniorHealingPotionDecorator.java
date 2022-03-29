@@ -1,7 +1,6 @@
 package Item.Potion;
 
 import Character.Pj;
-import Item.IConsumable;
 
 public class MiniorHealingPotionDecorator extends Potion{
     private int weigth = 1;
@@ -17,15 +16,15 @@ public class MiniorHealingPotionDecorator extends Potion{
         return weigth;
     }
 
-    private final IConsumable miniorHealingPotionDecorated;
+    private final Potion potion;
 
-    public MiniorHealingPotionDecorator(IConsumable miniorHealingPotionDecorated) {
-        this.miniorHealingPotionDecorated = miniorHealingPotionDecorated;
+    public MiniorHealingPotionDecorator(Potion potion) {
+        this.potion = potion;
     }
 
     @Override
     public double power() {
-        return miniorHealingPotionDecorated.power();
+        return potion.power();
     }
 
     @Override
