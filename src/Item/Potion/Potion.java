@@ -34,7 +34,6 @@ public abstract class Potion extends Item implements IConsumable {
     }
 
     @Override
-
     public String toString() {
         return getClass().getSimpleName() +
                 " power = " + power();

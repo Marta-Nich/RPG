@@ -2,10 +2,10 @@ package Item.Equipment.Weapon;
 
 public class Sword extends Weapon {
     private int powerAttack = 3;
-    private int weigth = 6;
+    private int weigth = 5;
     private int protection = 3;
     private int slotSpace = 1;
-    private double speed = 3;
+    private double speed = 5.5;
 
     @Override
     public int powerAttack() {
@@ -31,29 +31,8 @@ public class Sword extends Weapon {
     public double getSpeed() {
         return speed;
     }
-
     @Override
-    public double bonusAttack() {
-        return powerAttack;
-    }
-
-    @Override
-    public double nerfWeigth() {
-        return weigth;
-    }
-
-    @Override
-    public double bonusSpeed() {
-        return speed;
-    }
-
-    @Override
-    public double bonusProtection() {
-        return protection;
-    }
-
-    @Override
-    public double totalBonus() {
-        return (bonusAttack() * bonusSpeed()) - nerfWeigth();
+    public double totalAttackBonus() {
+        return powerAttack() * getSpeed();
     }
 }

@@ -1,10 +1,11 @@
 package Item.Food;
 
 import Character.Pj;
-import Item.IConsumable;
 
-public class EnhancedFoodDecorator extends Food implements IConsumable {
+public class EnhancedFoodDecorator extends Food {
     private final Food food;
+    private int weigth;
+    private int slotSpace = 1;
 
     public EnhancedFoodDecorator(Food food) {
         this.food = food;
@@ -13,6 +14,17 @@ public class EnhancedFoodDecorator extends Food implements IConsumable {
     @Override
     public double power() {
         return food.power() * 2;
+    }
+
+    @Override
+    public int weigth() {
+        weigth = food.weigth();
+        return weigth;
+    }
+
+    @Override
+    public int slotSpace() {
+        return slotSpace;
     }
 
     @Override

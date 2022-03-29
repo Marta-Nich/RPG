@@ -19,7 +19,6 @@ class EnhancedFoodDecoratorTest {
     EnhancedFoodDecorator enhancedFoodDecoratorChicken;
     EnhancedFoodDecorator enhancedFoodDecoratorLeekCream;
 
-
     @BeforeEach
     void setUp() {
         apple = new Apple();
@@ -59,19 +58,72 @@ class EnhancedFoodDecoratorTest {
     @Test
     void initialValue_powerEnhancedFoodDecoratorBeansWithCod_returnValue() {
         double espected = 200;
-        assertEquals(espected, enhancedFoodDecoratorBread.power());
+        assertEquals(espected, enhancedFoodDecoratorBeansWithCod.power());
     }
 
     @Test
     void initialValue_slotSpaceEnhancedFoodDecoratorBeansWithCod_returnValue() {
         int espected = 1;
+        assertEquals(espected, enhancedFoodDecoratorBeansWithCod.slotSpace());
+    }
+
+    @Test
+    void initialValue_weigthEnhancedFoodDecoratorBeansWithCod_returnValue() {
+        int espected = 5;
+        assertEquals(espected, enhancedFoodDecoratorBeansWithCod.weigth());
+    }
+
+    @Test
+    void initialValue_powerEnhancedFoodDecoratorBread_returnValue() {
+        double espected = 20;
+        assertEquals(espected, enhancedFoodDecoratorBread.power());
+    }
+
+    @Test
+    void initialValue_slotSpaceEnhancedFoodDecoratorBread_returnValue() {
+        int espected = 1;
         assertEquals(espected, enhancedFoodDecoratorBread.slotSpace());
     }
 
     @Test
-    void initialValue_weigthEnhancedFoodDecoratorBeansWithCodreturnValue() {
-        int espected = 5;
+    void initialValue_weigthEnhancedFoodDecoratorBread_returnValue() {
+        int espected = 2;
         assertEquals(espected, enhancedFoodDecoratorBread.weigth());
     }
 
+    @Test
+    void initialValue_powerEnhancedFoodDecoratorChicken_returnValue() {
+        double espected = 50;
+        assertEquals(espected, enhancedFoodDecoratorChicken.power());
+    }
+
+    @Test
+    void initialValue_slotSpaceEnhancedFoodDecoratorChicken_returnValue() {
+        int espected = 1;
+        assertEquals(espected, enhancedFoodDecoratorChicken.slotSpace());
+    }
+
+    @Test
+    void initialValue_weigthEnhancedFoodDecoratorChicken_returnValue() {
+        int espected = 3;
+        assertEquals(espected, enhancedFoodDecoratorChicken.weigth());
+    }
+
+    @Test
+    void initialValue_powerEnhancedFoodDecoratorLeekCream_returnValue() {
+        double espected = 100;
+        assertEquals(espected, enhancedFoodDecoratorLeekCream.power());
+    }
+
+    @Test
+    void initialValue_slotSpaceEnhancedFoodDecoratorLeekCream_returnValue() {
+        int espected = 1;
+        assertEquals(espected, enhancedFoodDecoratorLeekCream.slotSpace());
+    }
+
+    @Test
+    void initialValue_weigthEnhancedFoodDecoratorLeekCream_returnValue() {
+        int espected = 4;
+        assertEquals(espected, enhancedFoodDecoratorLeekCream.weigth());
+    }
 }

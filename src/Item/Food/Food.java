@@ -36,4 +36,10 @@ public abstract class Food extends Item implements IConsumable {
             pj.heals(pj.maxHealth() - pj.health());
         }
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() +
+                " power = " + power();
+    }
 }

@@ -5,7 +5,7 @@ import Character.Stat.Intelligence;
 import Character.Stat.Stat;
 import Character.Stat.Strength;
 
-public class JobMock extends Job {
+public class Archer extends Job {
 
     @Override
     public int modifier(Stat stat) {

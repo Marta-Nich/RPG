@@ -1,7 +1,7 @@
 package Item;
 
-import Character.Job.JobMock;
-import Character.Race.RaceMock;
+import Character.Job.Archer;
+import Character.Race.Elf;
 import Character.Stat.Constitution;
 import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
@@ -27,7 +27,7 @@ class ConsumedByMockTest {
 
     @Test
     void initialValue_consumedByMock_returnTrue() {
-        consumedByMock.consumedBy(new Pj("h", new RaceMock(), new JobMock(), new Strength(5), new Dexterity(5), new Constitution(5), new Intelligence(5)));
+        consumedByMock.consumedBy(new Pj("h", new Elf(), new Archer(), new Strength(5), new Dexterity(5), new Constitution(5), new Intelligence(5)));
         assertTrue(consumedByMock.callConsumedBy);
     }
     @Test

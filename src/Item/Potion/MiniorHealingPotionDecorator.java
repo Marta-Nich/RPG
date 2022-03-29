@@ -3,8 +3,10 @@ package Item.Potion;
 import Character.Pj;
 
 public class MiniorHealingPotionDecorator extends Potion {
+    private double power = 50 / 2;
     private int weigth = 1;
     private int slotSpace = 1;
+    private final Potion potion;
 
     @Override
     public int slotSpace() {
@@ -16,15 +18,13 @@ public class MiniorHealingPotionDecorator extends Potion {
         return weigth;
     }
 
-    private final Potion potion;
-
     public MiniorHealingPotionDecorator(Potion potion) {
         this.potion = potion;
     }
 
     @Override
     public double power() {
-        return potion.power() / 2;
+        return power;
     }
 
     @Override

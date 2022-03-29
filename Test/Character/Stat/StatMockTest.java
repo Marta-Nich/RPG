@@ -56,7 +56,7 @@ class StatMockTest {
 
     @Test
     void initialValue_testToStringStat_ReturnString() {
-        assertEquals("Stat{value="+initialValue+"}", statMonk.toString());
+        assertEquals("5", statMonk.toString());
     }
 
 }

@@ -33,27 +33,7 @@ public class Wardhammer extends Weapon {
     }
 
     @Override
-    public double bonusAttack() {
-        return powerAttack;
-    }
-
-    @Override
-    public double nerfWeigth() {
-        return weigth;
-    }
-
-    @Override
-    public double bonusSpeed() {
-        return speed;
-    }
-
-    @Override
-    public double bonusProtection() {
-        return protection;
-    }
-
-    @Override
-    public double totalBonus() {
-        return (bonusAttack() * bonusSpeed()) - nerfWeigth();
+    public double totalAttackBonus() {
+        return powerAttack() * getSpeed();
     }
 }

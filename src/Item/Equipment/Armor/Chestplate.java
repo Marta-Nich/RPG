@@ -25,24 +25,4 @@ public class Chestplate extends Armor {
     public int slotSpace() {
         return slotSpace;
     }
-
-    @Override
-    public double bonusAttack() {
-        return powerAttack * 2;
-    }
-
-    @Override
-    public double nerfWeigth() {
-        return weigth;
-    }
-
-    @Override
-    public double bonusProtection() {
-        return protection;
-    }
-
-    @Override
-    public double totalBonus() {
-        return bonusAttack() - nerfWeigth();
-    }
 }

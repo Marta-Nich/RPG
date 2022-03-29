@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArcherTest {
-    JobMock archer;
+    Archer archer;
     Strength strength;
     Constitution constitution;
     Intelligence intelligence;
@@ -19,7 +19,7 @@ class ArcherTest {
 
     @BeforeEach
     void setUp() {
-        archer = new JobMock();
+        archer = new Archer();
         strength = new Strength(5);
         constitution = new Constitution(5);
         intelligence = new Intelligence(5);

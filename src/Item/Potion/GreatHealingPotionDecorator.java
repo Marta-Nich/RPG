@@ -3,6 +3,7 @@ package Item.Potion;
 import Character.Pj;
 
 public class GreatHealingPotionDecorator extends Potion {
+    private double power = 50 * 2;
     private final Potion potion;
     private int weigth = 3;
     private int slotSpace = 1;
@@ -23,12 +24,12 @@ public class GreatHealingPotionDecorator extends Potion {
 
     @Override
     public double power() {
-        return potion.power() * 2;
+        return power;
     }
 
     @Override
     public void consumedBy(Pj pj) {
-        if (pj.health() + (power() * 2) <= pj.maxHealth()) {
+        if (pj.health() + (power()) <= pj.maxHealth()) {
             pj.heals(power());
         } else {
             pj.heals(pj.maxHealth() - pj.health());

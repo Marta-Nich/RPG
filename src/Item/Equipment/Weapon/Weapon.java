@@ -10,30 +10,36 @@ public abstract class Weapon extends Item implements IEquipable {
         return speed;
     }
 
-    public double bonusAttack() {
+    public double totalAttackBonus() {
         return 0;
     }
 
-    public double nerfWeigth() {
+    @Override
+    public int weigth() {
         return 0;
     }
 
-    public double bonusSpeed() {
+    @Override
+    public int powerAttack() {
         return 0;
     }
 
-    public double bonusProtection() {
+    @Override
+    public int protection() {
         return 0;
     }
 
-    public double totalBonus() {
+    @Override
+    public int slotSpace() {
         return 0;
     }
 
     @Override
     public String toString() {
-        return "Weapon{" +
-                "speed=" + speed +
-                '}';
+        return "Weapon{" + getClass().getSimpleName() +
+                " bonus speed = " + getSpeed() +
+                " bonus  attack = " + powerAttack() +
+                " bonus protection = " + protection() +
+                " }";
     }
 }

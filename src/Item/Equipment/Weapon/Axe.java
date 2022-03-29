@@ -5,7 +5,7 @@ public class Axe extends Weapon {
     private int weigth = 7;
     private int protection = 2;
     private int slotSpace = 1;
-    private double speed = 2;
+    private double speed = 3;
 
     @Override
     public int powerAttack() {
@@ -33,27 +33,7 @@ public class Axe extends Weapon {
     }
 
     @Override
-    public double bonusAttack() {
-        return powerAttack;
-    }
-
-    @Override
-    public double nerfWeigth() {
-        return weigth;
-    }
-
-    @Override
-    public double bonusSpeed() {
-        return speed;
-    }
-
-    @Override
-    public double bonusProtection() {
-        return protection;
-    }
-
-    @Override
-    public double totalBonus() {
-        return (bonusAttack() * bonusSpeed()) - nerfWeigth();
+    public double totalAttackBonus() {
+        return powerAttack() * getSpeed();
     }
 }

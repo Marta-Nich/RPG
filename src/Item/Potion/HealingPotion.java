@@ -1,5 +1,7 @@
 package Item.Potion;
 
+import Character.Pj;
+
 public class HealingPotion extends Potion {
     private double power = 50;
     private int weigth = 2;
@@ -18,6 +20,15 @@ public class HealingPotion extends Potion {
     @Override
     public double power() {
         return power;
+    }
+
+    @Override
+    public void consumedBy(Pj pj) {
+        if (pj.health() + power() <= pj.maxHealth()) {
+            pj.heals(power());
+        } else {
+            pj.heals(pj.maxHealth() - pj.health());
+        }
     }
 
     @Override

@@ -3,9 +3,9 @@ package Item.Equipment.Weapon;
 public class Bow extends Weapon {
     private int powerAttack = 3;
     private int weigth = 5;
-    private int protection = 0;
+    private int protection = 1;
     private int slotSpace = 2;
-    private double speed = 2.5;
+    private double speed = 4.5;
 
     @Override
     public int powerAttack() {
@@ -33,27 +33,7 @@ public class Bow extends Weapon {
     }
 
     @Override
-    public double bonusAttack() {
-        return powerAttack;
-    }
-
-    @Override
-    public double nerfWeigth() {
-        return weigth;
-    }
-
-    @Override
-    public double bonusSpeed() {
-        return speed;
-    }
-
-    @Override
-    public double bonusProtection() {
-        return protection;
-    }
-
-    @Override
-    public double totalBonus() {
-        return (bonusAttack() * bonusSpeed()) - nerfWeigth();
+    public double totalAttackBonus() {
+        return powerAttack() * getSpeed();
     }
 }

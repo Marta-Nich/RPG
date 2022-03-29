@@ -12,11 +12,6 @@ public class Necklace extends Jewelry {
     }
 
     @Override
-    public int protection() {
-        return protection;
-    }
-
-    @Override
     public int weigth() {
         return weigth;
     }
@@ -27,22 +22,8 @@ public class Necklace extends Jewelry {
     }
 
     @Override
-    public double bonusAttack() {
-        return powerAttack * 2;
-    }
-
-    @Override
-    public double nerfWeigth() {
-        return weigth;
-    }
-
-    @Override
-    public double bonusProtection() {
+    public int protection() {
         return protection;
     }
 
-    @Override
-    public double totalBonus() {
-        return bonusAttack() - nerfWeigth();
-    }
 }

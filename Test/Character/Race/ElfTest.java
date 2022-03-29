@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ElfTest {
-    RaceMock elf;
+    Elf elf;
     Strength strength;
     Constitution constitution;
     Intelligence intelligence;
@@ -19,7 +19,7 @@ class ElfTest {
 
     @BeforeEach
     void setUp() {
-        elf = new RaceMock();
+        elf = new Elf();
         strength = new Strength(5);
         constitution = new Constitution(5);
         intelligence = new Intelligence(5);

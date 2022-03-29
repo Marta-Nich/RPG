@@ -31,7 +31,7 @@ class PjTest {
     Chicken chicken;
     LeekCream leekCream;
 
-    PotionMock healingPotion;
+    HealingPotion healingPotion;
     MiniorHealingPotionDecorator miniorHealingPotionDecorator;
     GreatHealingPotionDecorator greatHealingPotionDecorator;
 
@@ -59,7 +59,7 @@ class PjTest {
         chicken = new Chicken();
         leekCream = new LeekCream();
 
-        healingPotion = new PotionMock();
+        healingPotion = new HealingPotion();
         miniorHealingPotionDecorator = new MiniorHealingPotionDecorator(healingPotion);
         greatHealingPotionDecorator = new GreatHealingPotionDecorator(healingPotion);
 

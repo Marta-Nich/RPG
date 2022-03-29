@@ -2,7 +2,7 @@ package Character.Race;
 
 import Character.Stat.*;
 
-public class RaceMock extends Race {
+public class Elf extends Race {
     @Override
     public int modifier(Stat stat) {
         if (stat instanceof Dexterity) {
