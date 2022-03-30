@@ -19,13 +19,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryMockTest {
     InventoryMock inventoryMock;
-    Pj pj;
 
     @BeforeEach
     void setUp() {
         inventoryMock = new InventoryMock();
-        pj = new Pj("h", new RaceMock(), new JobMock(), new Strength(5), new Dexterity(5), new Constitution(5), new Intelligence(5));
-    }
+           }
 
     @AfterEach
     void tearDown() {

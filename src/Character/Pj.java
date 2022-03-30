@@ -6,7 +6,9 @@ import Character.Stat.Constitution;
 import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
 import Character.Stat.Strength;
+import Inventory.Inventory;
 import Item.IConsumable;
+import Inventory.Equipment;
 
 public class Pj implements IDamageable {
     private String name;
@@ -32,6 +34,8 @@ public class Pj implements IDamageable {
     private Constitution constitution;
     private Intelligence intelligence;
     private double damage = 0;
+    private Inventory inventory;
+    private Equipment equipment;
 
 
     public Pj(String name, Race race, Job job, Strength strength, Dexterity dexterity, Constitution constitution, Intelligence intelligence) {
@@ -58,7 +62,7 @@ public class Pj implements IDamageable {
 
     //(Valor base Strength + bonif. raza + bonif.profesion)*2
     public double power() {    /*Mas totalBonus*/
-        return (2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+        return equipment.totalBonusAttack() + (2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
                 + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence)));
     }
 
@@ -108,7 +112,7 @@ public class Pj implements IDamageable {
     @Override
     public void receivesDamage(double amount) {
         if (amount > 0) {
-            damage += amount;  /*Menos bonusProtection*/
+            damage += (amount - equipment.totalBonusProtection());  /*Menos bonusProtection*/
             System.out.println(getName() + " received " + amount + " damage. Health: " + health() + "/" + maxHealth());
         }
     }

@@ -4,12 +4,11 @@ import Item.Equipment.Armor.*;
 import Item.Equipment.Jewelry.Jewelry;
 import Item.Equipment.Weapon.Weapon;
 import Item.IEquipable;
+import Item.IPickable;
 
 import java.util.LinkedList;
 
 public class Equipment {
-    private LinkedList<IEquipable> equip;
-
     private LinkedList<IEquipable> weapons;
 
     public LinkedList<IEquipable> getWeapons() {
@@ -78,6 +77,58 @@ public class Equipment {
             }
         }
         return false;
+    }
+
+    public double totalBonusAttack() {
+        double bonusAttack = 0;
+        for (IEquipable pickable : weapons) {
+            bonusAttack += pickable.powerAttack();
+        }
+        for (IEquipable pickable : jewelries) {
+            bonusAttack += pickable.powerAttack();
+        }
+        for (IEquipable pickable : boots) {
+            bonusAttack += pickable.powerAttack();
+        }
+        for (IEquipable pickable : chestplates) {
+            bonusAttack += pickable.powerAttack();
+        }
+        for (IEquipable pickable : helmets) {
+            bonusAttack += pickable.powerAttack();
+        }
+        for (IEquipable pickable : leggings) {
+            bonusAttack += pickable.powerAttack();
+        }
+        return bonusAttack;
+    }
+
+    public double totalBonusWeigth() {
+        double bonusWeigth = 0;
+
+        return bonusWeigth;
+    }
+
+    public double totalBonusProtection() {
+        double bonusProtection = 0;
+        for (IEquipable pickable : weapons) {
+            bonusProtection += pickable.protection();
+        }
+        for (IEquipable pickable : jewelries) {
+            bonusProtection += pickable.protection();
+        }
+        for (IEquipable pickable : boots) {
+            bonusProtection += pickable.protection();
+        }
+        for (IEquipable pickable : chestplates) {
+            bonusProtection += pickable.protection();
+        }
+        for (IEquipable pickable : helmets) {
+            bonusProtection += pickable.protection();
+        }
+        for (IEquipable pickable : leggings) {
+            bonusProtection += pickable.protection();
+        }
+        return bonusProtection;
     }
 
     public void equipIEquipable(IEquipable eqipable) {

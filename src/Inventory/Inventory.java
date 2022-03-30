@@ -7,8 +7,6 @@ import Character.Pj;
 import java.util.LinkedList;
 
 public class Inventory {
-    private Pj pj;
-
     private LinkedList<IPickable> inventory;
 
     public LinkedList<IPickable> getInventory() {
