@@ -121,10 +121,10 @@ class PjTest {
                 " My stats are: Strength: " + strength + " " +
                 "Dexterity: " + dexterity + " " +
                 "Constitution: " + constitution + " " +
-                "Velocity: " + "10.0" + " " +
-                "Power: " + "10.0" + " " +
-                "Magic: " + "10.0" + " " +
-                "Health: " + "125.0";
+                "Velocity: " + pj.velocity() + " " +
+                "Power: " + pj.power() + " " +
+                "Magic: " + pj.magic() + " " +
+                "Health: " + pj.health();
         assertEquals(expected, pj.toString());
     }
 

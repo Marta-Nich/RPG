@@ -107,7 +107,7 @@ public class Equipment {
                 bonusAttack += pickable.powerAttack();
             }
         }
-        return bonusAttack;
+        return bonusAttack * 2;
     }
 
     private boolean noNullLeggins() {
@@ -166,7 +166,7 @@ public class Equipment {
                 bonusWeigth += pickable.weigthEquip();
             }
         }
-        return bonusWeigth;
+        return bonusWeigth * 2;
     }
 
     public double totalBonusProtection() {
@@ -201,7 +201,7 @@ public class Equipment {
                 bonusProtection += pickable.protection();
             }
         }
-        return bonusProtection;
+        return bonusProtection * 2;
     }
 
     public void equipIEquipable(IEquipable eqipable) {

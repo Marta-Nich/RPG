@@ -26,8 +26,6 @@ public class Inventory {
         for (IPickable pickable : inventory) {
             busyWeigth += pickable.weigthItem();
         }
-
-        System.out.print("El peso actual es de : " + busyWeigth);
         return busyWeigth;
     }
 

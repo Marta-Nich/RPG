@@ -63,12 +63,12 @@ public class Pj implements IDamageable {
         return (2 * (dexterity.getValue() + race.modifier(strength)
                 + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
                 + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution)
-                + job.modifier(intelligence))) - equipment.totalBonusWeigth();
+                + job.modifier(intelligence))) /*- equipment.totalBonusWeigth()*/;
     }
 
     //(Valor base Strength + bonif. raza + bonif.profesion)*2
     public double power() {    /*Mas totalBonus*/
-        return equipment.totalBonusAttack() + (2 * (strength.getValue() + race.modifier(strength)
+        return /* equipment.totalBonusAttack() +*/ (2 * (strength.getValue() + race.modifier(strength)
                 + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
                 + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution)
                 + job.modifier(intelligence)));
@@ -122,7 +122,7 @@ public class Pj implements IDamageable {
     @Override
     public void receivesDamage(double amount) {
         if (amount > 0) {
-            damage += (amount - equipment.totalBonusProtection());  /*Menos bonusProtection*/
+            damage += (amount /*- equipment.totalBonusProtection()*/);  /*Menos bonusProtection*/
             System.out.println(getName() + " received " + amount + " damage. Health: " + health() + "/" + maxHealth());
         }
     }

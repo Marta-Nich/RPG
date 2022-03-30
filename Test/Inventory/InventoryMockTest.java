@@ -8,6 +8,7 @@ import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
 import Character.Stat.Strength;
 import Item.Food.Apple;
+import Item.Item;
 import Item.ItemMock;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,13 +32,15 @@ class InventoryMockTest {
 
     @Test
     void initialValue_pickItemInventory_returnTrue() {
-        inventoryMock.pickItem(new ItemMock());
+        ItemMock itemMock = new ItemMock();
+        inventoryMock.pickItem(itemMock);
         assertTrue(inventoryMock.callPickItem);
     }
 
     @Test
     void initialValue_dropItemInventory_returnValueTrue() {
-        inventoryMock.dropItem(new ItemMock());
+        ItemMock itemMock = new ItemMock();
+        inventoryMock.dropItem(itemMock);
         assertTrue(inventoryMock.callDropItem);
     }
 
