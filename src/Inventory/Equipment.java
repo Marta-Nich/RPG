@@ -7,6 +7,7 @@ import Item.Equipment.Armor.Leggings;
 import Item.Equipment.Jewelry.Jewelry;
 import Item.Equipment.Weapon.Weapon;
 import Item.IEquipable;
+import Character.Pj;
 
 import java.util.LinkedList;
 
@@ -22,37 +23,30 @@ public class Equipment {
     private LinkedList<IEquipable> helmets = new LinkedList<>();
 
     private LinkedList<IEquipable> leggings = new LinkedList<>();
+    private Pj pj;
+
+    public Equipment(Pj pj) {
+        this.pj = pj;
+    }
 
     public boolean enters(IEquipable eqipable) {
         if (isWeapon(eqipable)) {
-            if (eqipable.slotSpace() + weapons.size() <= 2) {
-                return true;
-            }
+            return eqipable.slotSpace() + weapons.size() <= 2;
         }
         if (isJewelries(eqipable)) {
-            if (eqipable.slotSpace() + jewelries.size() <= 1) {
-                return true;
-            }
+            return eqipable.slotSpace() + jewelries.size() <= 1;
         }
         if (isBoots(eqipable)) {
-            if (eqipable.slotSpace() + boots.size() <= 1) {
-                return true;
-            }
+            return eqipable.slotSpace() + boots.size() <= 1;
         }
         if (isChestplates(eqipable)) {
-            if (eqipable.slotSpace() + chestplates.size() <= 1) {
-                return true;
-            }
+            return eqipable.slotSpace() + chestplates.size() <= 1;
         }
         if (isHelmet(eqipable)) {
-            if (eqipable.slotSpace() + helmets.size() <= 1) {
-                return true;
-            }
+            return eqipable.slotSpace() + helmets.size() <= 1;
         }
         if (isLeggins(eqipable)) {
-            if (eqipable.slotSpace() + leggings.size() <= 1) {
-                return true;
-            }
+            return eqipable.slotSpace() + leggings.size() <= 1;
         }
         return false;
     }
@@ -83,32 +77,32 @@ public class Equipment {
 
     public double totalBonusAttack() {
         double bonusAttack = 0;
-        if (weapons != null) {
+        if (noNullWeapons()) {
             for (IEquipable pickable : weapons) {
                 bonusAttack += pickable.powerAttack();
             }
         }
-        if (jewelries != null) {
+        if (noNullJewelries()) {
             for (IEquipable pickable : jewelries) {
                 bonusAttack += pickable.powerAttack();
             }
         }
-        if (boots != null) {
+        if (noNullBoots()) {
             for (IEquipable pickable : boots) {
                 bonusAttack += pickable.powerAttack();
             }
         }
-        if (chestplates != null) {
+        if (noNullChestplates()) {
             for (IEquipable pickable : chestplates) {
                 bonusAttack += pickable.powerAttack();
             }
         }
-        if (helmets != null) {
+        if (noNullHelmets()) {
             for (IEquipable pickable : helmets) {
                 bonusAttack += pickable.powerAttack();
             }
         }
-        if (leggings != null) {
+        if (noNullLeggins()) {
             for (IEquipable pickable : leggings) {
                 bonusAttack += pickable.powerAttack();
             }
@@ -116,34 +110,58 @@ public class Equipment {
         return bonusAttack;
     }
 
+    private boolean noNullLeggins() {
+        return leggings != null;
+    }
+
+    private boolean noNullHelmets() {
+        return helmets != null;
+    }
+
+    private boolean noNullChestplates() {
+        return chestplates != null;
+    }
+
+    private boolean noNullBoots() {
+        return boots != null;
+    }
+
+    private boolean noNullJewelries() {
+        return jewelries != null;
+    }
+
+    private boolean noNullWeapons() {
+        return weapons != null;
+    }
+
     public double totalBonusWeigth() {
         double bonusWeigth = 0;
-        if (weapons != null) {
+        if (noNullWeapons()) {
             for (IEquipable pickable : weapons) {
                 bonusWeigth += pickable.weigthEquip();
             }
         }
-        if (jewelries != null) {
+        if (noNullJewelries()) {
             for (IEquipable pickable : jewelries) {
                 bonusWeigth += pickable.weigthEquip();
             }
         }
-        if (boots != null) {
+        if (noNullBoots()) {
             for (IEquipable pickable : boots) {
                 bonusWeigth += pickable.weigthEquip();
             }
         }
-        if (chestplates != null) {
+        if (noNullChestplates()) {
             for (IEquipable pickable : chestplates) {
                 bonusWeigth += pickable.weigthEquip();
             }
         }
-        if (helmets != null) {
+        if (noNullHelmets()) {
             for (IEquipable pickable : helmets) {
                 bonusWeigth += pickable.weigthEquip();
             }
         }
-        if (leggings != null) {
+        if (noNullLeggins()) {
             for (IEquipable pickable : leggings) {
                 bonusWeigth += pickable.weigthEquip();
             }
@@ -153,32 +171,32 @@ public class Equipment {
 
     public double totalBonusProtection() {
         double bonusProtection = 0;
-        if (weapons != null) {
+        if (noNullWeapons()) {
             for (IEquipable pickable : weapons) {
                 bonusProtection += pickable.protection();
             }
         }
-        if (jewelries != null) {
+        if (noNullJewelries()) {
             for (IEquipable pickable : jewelries) {
                 bonusProtection += pickable.protection();
             }
         }
-        if (boots != null) {
+        if (noNullBoots()) {
             for (IEquipable pickable : boots) {
                 bonusProtection += pickable.protection();
             }
         }
-        if (chestplates != null) {
+        if (noNullChestplates()) {
             for (IEquipable pickable : chestplates) {
                 bonusProtection += pickable.protection();
             }
         }
-        if (helmets != null) {
+        if (noNullHelmets()) {
             for (IEquipable pickable : helmets) {
                 bonusProtection += pickable.protection();
             }
         }
-        if (leggings != null) {
+        if (noNullLeggins()) {
             for (IEquipable pickable : leggings) {
                 bonusProtection += pickable.protection();
             }
@@ -187,6 +205,46 @@ public class Equipment {
     }
 
     public void equipIEquipable(IEquipable eqipable) {
-        eqipable.equipBy(this);
+        if (enters(eqipable)) {
+            if (isWeapon(eqipable)) {
+                weapons.add(eqipable);
+            }
+            if (isJewelries(eqipable)) {
+                jewelries.add(eqipable);
+            }
+            if (isBoots(eqipable)) {
+                boots.add(eqipable);
+            }
+            if (isChestplates(eqipable)) {
+                chestplates.add(eqipable);
+            }
+            if (isHelmet(eqipable)) {
+                helmets.add(eqipable);
+            }
+            if (isLeggins(eqipable)) {
+                leggings.add(eqipable);
+            }
+        }
+    }
+
+    public void unEquipIEquipable(IEquipable eqipable) {
+        if (noNullWeapons()) {
+            weapons.remove(eqipable);
+        }
+        if (noNullJewelries()) {
+            jewelries.remove(eqipable);
+        }
+        if (noNullBoots()) {
+            boots.remove(eqipable);
+        }
+        if (noNullChestplates()) {
+            chestplates.remove(eqipable);
+        }
+        if (noNullHelmets()) {
+            helmets.remove(eqipable);
+        }
+        if (noNullLeggins()) {
+            leggings.remove(eqipable);
+        }
     }
 }

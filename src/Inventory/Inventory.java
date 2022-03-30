@@ -10,7 +10,7 @@ public class Inventory {
     private LinkedList<IPickable> inventory = new LinkedList<>();
 
     public double maxWeight() {
-       double maxWeight = pj.maxWeigth();
+        double maxWeight = pj.maxWeigth();
         return maxWeight;
     }
 
@@ -40,9 +40,7 @@ public class Inventory {
 
     public void dropItem(IDropeable dropeable) {
         if (inventory != null) {
-            if (inventory.contains(dropeable)) {
-                inventory.remove(dropeable);
-            }
+            inventory.remove(dropeable);
         }
     }
 

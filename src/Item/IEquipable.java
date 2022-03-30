@@ -1,6 +1,6 @@
 package Item;
 
-import Inventory.Equipment;
+import Character.Pj;
 
 public interface IEquipable {
     int powerAttack();
@@ -9,7 +9,9 @@ public interface IEquipable {
 
     int slotSpace();
 
-    void equipBy(Equipment equipment);
+    void equipBy(Pj pj);
+
+    void unEquipBy(Pj pj);
 
     int weigthEquip();
 }

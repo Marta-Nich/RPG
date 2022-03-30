@@ -32,10 +32,4 @@ public class Leggings extends Armor {
     public int slotSpace() {
         return slotSpace;
     }
-
-    @Override
-    public void equipBy(Equipment equipment) {
-        if (equipment.enters(this)) {
-        }
-    }
 }

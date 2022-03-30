@@ -59,10 +59,9 @@ class InventoryMockTest {
         assertEquals(espected, inventoryMock.weigthListIPickable());
     }
 
-
     @Test
     void initialValue_getMaxWeightInventory_returnWeigth() {
-        double espected = 60;
+        double espected = pj.maxWeigth();
         assertEquals(espected, inventoryMock.maxWeight());
     }
 }

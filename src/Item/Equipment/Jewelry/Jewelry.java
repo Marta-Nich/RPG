@@ -1,6 +1,6 @@
 package Item.Equipment.Jewelry;
 
-import Inventory.Equipment;
+import Character.Pj;
 import Item.Item;
 import Item.IEquipable;
 
@@ -21,9 +21,13 @@ public abstract class Jewelry extends Item implements IEquipable {
     }
 
     @Override
-    public void equipBy(Equipment equipment) {
-        if (equipment.enters(this)) {
-        }
+    public void equipBy(Pj pj) {
+        pj.putEquipment(this);
+    }
+
+    @Override
+    public void unEquipBy(Pj pj) {
+        pj.removeEquipment(this);
     }
 
     @Override

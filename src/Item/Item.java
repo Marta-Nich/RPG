@@ -11,11 +11,11 @@ public abstract class Item implements IPickable, IDropeable {
 
     @Override
     public void pickUpBy(Pj pj) {
-        pj.putInventory(this);
+        pj.putIntem(this);
     }
 
     @Override
     public void dropBy(Pj pj) {
-        pj.removeInventory(this);
+        pj.removeIntem(this);
     }
 }

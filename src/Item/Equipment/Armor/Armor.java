@@ -1,6 +1,6 @@
 package Item.Equipment.Armor;
 
-import Inventory.Equipment;
+import Character.Pj;
 import Item.Item;
 import Item.IEquipable;
 
@@ -32,6 +32,12 @@ public abstract class Armor extends Item implements IEquipable {
     }
 
     @Override
-    public void equipBy(Equipment equipment) {
+    public void equipBy(Pj pj) {
+        pj.putEquipment(this);
+    }
+
+    @Override
+    public void unEquipBy(Pj pj) {
+        pj.removeEquipment(this);
     }
 }
