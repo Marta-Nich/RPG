@@ -21,12 +21,6 @@ class MiniorHealingPotionDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpaceMinionHealingPotionDecorator_returnValue() {
-        int espected = 1;
-        assertEquals(espected, miniorHealingPotionDecorator.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthMinionHealingPotionDecorator_returnValue() {
         int espected = 1;
         assertEquals(espected, miniorHealingPotionDecorator.weigth());

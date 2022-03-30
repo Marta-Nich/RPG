@@ -1,11 +1,10 @@
 package Item.Equipment.Armor;
 
+import Inventory.Equipment;
 import Item.Item;
 import Item.IEquipable;
 
 public abstract class Armor extends Item implements IEquipable {
-    public Armor() {
-    }
 
     @Override
     public int protection() {
@@ -19,11 +18,15 @@ public abstract class Armor extends Item implements IEquipable {
 
     @Override
     public int slotSpace() {
-        return super.slotSpace();
+        return 0;
     }
 
     @Override
     public int weigth() {
         return super.weigth();
+    }
+
+    @Override
+    public void equipBy(Equipment equipment) {
     }
 }

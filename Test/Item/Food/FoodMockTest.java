@@ -18,11 +18,6 @@ class FoodMockTest {
     void tearDown() {
     }
 
-    @Test
-    void initialValue_slotSpaceFoodMock_returnValue() {
-        int espected = 0;
-        assertEquals(espected, foodMock.slotSpace());
-    }
 
     @Test
     void initialValue_weigthFoodMock_returnValue() {

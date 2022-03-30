@@ -5,7 +5,6 @@ import Character.Pj;
 public class PoisonousFoodDecorator extends Food {
     private final Food food;
     private int weigth;
-    private int slotSpace = 1;
 
     protected PoisonousFoodDecorator(Food food) {
         this.food = food;
@@ -20,11 +19,6 @@ public class PoisonousFoodDecorator extends Food {
     public int weigth() {
         weigth = food.weigth();
         return weigth;
-    }
-
-    @Override
-    public int slotSpace() {
-        return slotSpace;
     }
 
     @Override

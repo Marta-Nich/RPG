@@ -19,20 +19,14 @@ class PotionMockTest {
     }
 
     @Test
-    void initialValue_slotSpacePotion_returnValue() {
-        int espected = 0;
-        assertEquals(espected, potionMock.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthPotion_returnValue() {
         int espected = 0;
-        assertEquals(espected, potionMock.slotSpace());
+        assertEquals(espected, potionMock.weigth());
     }
 
     @Test
     void initialValue_powerPotion_returnValue() {
         double espected = 0;
-        assertEquals(espected, potionMock.slotSpace());
+        assertEquals(espected, potionMock.power());
     }
 }

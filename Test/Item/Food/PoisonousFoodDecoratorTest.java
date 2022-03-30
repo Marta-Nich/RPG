@@ -45,12 +45,6 @@ class PoisonousFoodDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpacePoisonousFoodDecoratorApple_returnValue() {
-        int espected = 1;
-        assertEquals(espected, poisonousFoodDecoratorApple.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthPoisonousFoodDecoratorApple_returnValue() {
         int espected = 1;
         assertEquals(espected, poisonousFoodDecoratorApple.weigth());
@@ -60,12 +54,6 @@ class PoisonousFoodDecoratorTest {
     void initialValue_powerPoisonousFoodDecoratorBeansWithCod_returnValue() {
         double espected = -100;
         assertEquals(espected, poisonousFoodDecoratorBeansWithCod.power());
-    }
-
-    @Test
-    void initialValue_slotSpacePoisonousFoodDecoratorBeansWithCod_returnValue() {
-        int espected = 1;
-        assertEquals(espected, poisonousFoodDecoratorBeansWithCod.slotSpace());
     }
 
     @Test
@@ -81,12 +69,6 @@ class PoisonousFoodDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpacePoisonousFoodDecoratorBread_returnValue() {
-        int espected = 1;
-        assertEquals(espected, poisonousFoodDecoratorBread.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthPoisonousFoodDecoratorBread_returnValue() {
         int espected = 2;
         assertEquals(espected, poisonousFoodDecoratorBread.weigth());
@@ -99,12 +81,6 @@ class PoisonousFoodDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpacePoisonousFoodDecoratorChicken_returnValue() {
-        int espected = 1;
-        assertEquals(espected, poisonousFoodDecoratorChicken.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthPoisonousFoodDecoratorChicken_returnValue() {
         int espected = 3;
         assertEquals(espected, poisonousFoodDecoratorChicken.weigth());
@@ -114,12 +90,6 @@ class PoisonousFoodDecoratorTest {
     void initialValue_powerPoisonousFoodDecoratorLeekCream_returnValue() {
         double espected = -50;
         assertEquals(espected, poisonousFoodDecoratorLeekCream.power());
-    }
-
-    @Test
-    void initialValue_slotSpacePoisonousFoodDecoratorLeekCream_returnValue() {
-        int espected = 1;
-        assertEquals(espected, poisonousFoodDecoratorLeekCream.slotSpace());
     }
 
     @Test

@@ -19,12 +19,6 @@ class ChickenTest {
     }
 
     @Test
-    void initialValue_slotSpaceChicken_returnValue() {
-        int espected = 1;
-        assertEquals(espected, chicken.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthChicken_returnValue() {
         int espected = 3;
         assertEquals(espected, chicken.weigth());

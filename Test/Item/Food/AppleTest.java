@@ -19,12 +19,6 @@ class AppleTest {
     }
 
     @Test
-    void initialValue_slotSpaceApple_returnValue() {
-        int espected = 1;
-        assertEquals(espected, apple.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthApple_returnValue() {
         int espected = 1;
         assertEquals(espected, apple.weigth());

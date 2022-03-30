@@ -19,12 +19,6 @@ class HealingPotionTest {
     }
 
     @Test
-    void initialValue_slotSpaceHealingPotion_returnValue() {
-        int espected = 1;
-        assertEquals(espected, healingPotion.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthHealingPotion_returnValue() {
         int espected = 2;
         assertEquals(espected, healingPotion.weigth());

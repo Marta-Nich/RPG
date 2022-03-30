@@ -20,12 +20,6 @@ class BreadTest {
     }
 
     @Test
-    void initialValue_slotSpaceBread_returnValue() {
-        int espected = 1;
-        assertEquals(espected, bread.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthBread_returnValue() {
         int espected = 2;
         assertEquals(espected, bread.weigth());

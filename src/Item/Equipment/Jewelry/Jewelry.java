@@ -1,5 +1,6 @@
 package Item.Equipment.Jewelry;
 
+import Inventory.Equipment;
 import Item.Item;
 import Item.IEquipable;
 
@@ -14,12 +15,16 @@ public abstract class Jewelry extends Item implements IEquipable {
         return 0;
     }
 
-    public Jewelry() {
+    @Override
+    public int slotSpace() {
+        return 0;
     }
 
     @Override
-    public int slotSpace() {
-        return super.slotSpace();
+    public void equipBy(Equipment equipment) {
+        if (equipment.enters(this)) {
+            equipment.getJewelries().add(this);
+        }
     }
 
     @Override

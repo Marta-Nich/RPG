@@ -6,12 +6,6 @@ import Item.IConsumable;
 public class Apple extends Food implements IConsumable {
     private double power = 5;
     private int weigth = 1;
-    private int slotSpace = 1;
-
-    @Override
-    public int slotSpace() {
-        return slotSpace;
-    }
 
     @Override
     public int weigth() {

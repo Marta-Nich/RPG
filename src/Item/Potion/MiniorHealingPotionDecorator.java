@@ -5,13 +5,7 @@ import Character.Pj;
 public class MiniorHealingPotionDecorator extends Potion {
     private double power = 50 / 2;
     private int weigth = 1;
-    private int slotSpace = 1;
     private final Potion potion;
-
-    @Override
-    public int slotSpace() {
-        return slotSpace;
-    }
 
     @Override
     public int weigth() {

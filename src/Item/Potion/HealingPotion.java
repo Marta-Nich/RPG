@@ -5,12 +5,6 @@ import Character.Pj;
 public class HealingPotion extends Potion {
     private double power = 50;
     private int weigth = 2;
-    private int slotSpace = 1;
-
-    @Override
-    public int slotSpace() {
-        return slotSpace;
-    }
 
     @Override
     public int weigth() {

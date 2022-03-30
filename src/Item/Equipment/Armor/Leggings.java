@@ -1,5 +1,7 @@
 package Item.Equipment.Armor;
 
+import Inventory.Equipment;
+
 public class Leggings extends Armor {
     private int powerAttack = 4;
     private int weigth = 6;
@@ -24,5 +26,12 @@ public class Leggings extends Armor {
     @Override
     public int slotSpace() {
         return slotSpace;
+    }
+
+    @Override
+    public void equipBy(Equipment equipment) {
+        if (equipment.enters(this)) {
+            equipment.getLeggings().add(this);
+        }
     }
 }

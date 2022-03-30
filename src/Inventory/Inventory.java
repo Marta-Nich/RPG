@@ -9,42 +9,49 @@ import java.util.LinkedList;
 public class Inventory {
     private Pj pj;
 
-    private LinkedList<IPickable> items;
+    private LinkedList<IPickable> inventory;
 
-    private double maxWeight = pj.maxWeigth();
+    public LinkedList<IPickable> getInventory() {
+        return inventory;
+    }
 
-    public double getMaxWeight() {
+    private double maxWeight = 0;
+
+    public double maxWeight() {
+        if (pj != null) {
+            maxWeight = pj.maxWeigth();
+        }
+        System.out.print("El peso maximo es de : " + maxWeight);
         return maxWeight;
     }
 
-//    private double itemsWeigth = 0;
-
     private double busyWeigth = 0;
 
-    public double currentWeigth() {
+    public double weigthListIPickable() {
+        busyWeigth = 0;
+        if (inventory != null) {
+            for (IPickable pickable : inventory) {
+                System.out.println("sumando");
+                busyWeigth += pickable.weigth();
+            }
+        }
+        System.out.print("El peso actual es de : " + busyWeigth);
         return busyWeigth;
-
     }
 
-    public void add(IPickable pickable) {
-        items.add(pickable);
+    public void pickItem(IPickable pickable) {
+        pickable.pickUpBy(this);
+    }
+
+    public void dropItem(IDropeable dropeable) {
+        dropeable.dropBy(this);
     }
 
     @Override
     public String toString() {
         return "Inventory{" +
-                "items=" + items +
+                "items=" + inventory +
                 '}';
-    }
-
-    public void pick(IPickable pickable) {
-        pickable.pickUpBy(this);
-    }
-
-    public void drop(IDropeable dropeable) {
-        if (items.contains(dropeable)) {
-            dropeable.dropBy(this);
-        }
     }
 }
 

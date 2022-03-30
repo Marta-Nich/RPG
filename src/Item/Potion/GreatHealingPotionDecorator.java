@@ -6,12 +6,6 @@ public class GreatHealingPotionDecorator extends Potion {
     private double power = 50 * 2;
     private final Potion potion;
     private int weigth = 3;
-    private int slotSpace = 1;
-
-    @Override
-    public int slotSpace() {
-        return slotSpace;
-    }
 
     @Override
     public int weigth() {

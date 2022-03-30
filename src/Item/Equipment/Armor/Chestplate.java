@@ -1,5 +1,7 @@
 package Item.Equipment.Armor;
 
+import Inventory.Equipment;
+
 public class Chestplate extends Armor {
     private int powerAttack = 5;
     private int weigth = 7;
@@ -24,5 +26,12 @@ public class Chestplate extends Armor {
     @Override
     public int slotSpace() {
         return slotSpace;
+    }
+
+    @Override
+    public void equipBy(Equipment equipment) {
+        if (equipment.enters(this)) {
+            equipment.getChestplates().add(this);
+        }
     }
 }

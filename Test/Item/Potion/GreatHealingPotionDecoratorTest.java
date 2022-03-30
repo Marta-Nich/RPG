@@ -22,12 +22,6 @@ class GreatHealingPotionDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpaceGreatHealingPotionDecorator_retunValue() {
-        int espected = 1;
-        assertEquals(espected, greatHealingPotionDecorator.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthGreatHealingPotionDecorator_retunValue() {
         int espected = 3;
         assertEquals(espected, greatHealingPotionDecorator.weigth());

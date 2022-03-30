@@ -5,12 +5,6 @@ import Item.IConsumable;
 public class Chicken extends Food implements IConsumable {
     private double power = 25;
     private int weigth = 3;
-    private int slotSpace = 1;
-
-    @Override
-    public int slotSpace() {
-        return slotSpace;
-    }
 
     @Override
     public int weigth() {

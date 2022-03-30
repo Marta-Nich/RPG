@@ -1,5 +1,6 @@
 package Item.Equipment.Weapon;
 
+import Inventory.Equipment;
 import Item.Item;
 import Item.IEquipable;
 
@@ -32,6 +33,13 @@ public abstract class Weapon extends Item implements IEquipable {
     @Override
     public int slotSpace() {
         return 0;
+    }
+
+    @Override
+    public void equipBy(Equipment equipment) {
+        if (equipment.enters(this)) {
+            equipment.getWeapons().add(this);
+        }
     }
 
     @Override

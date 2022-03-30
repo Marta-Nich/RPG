@@ -44,12 +44,6 @@ class EnhancedFoodDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpaceEnhancedFoodDecoratorApple_returnValue() {
-        int espected = 1;
-        assertEquals(espected, enhancedFoodDecoratorApple.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthEnhancedFoodDecoratorApple_returnValue() {
         int espected = 1;
         assertEquals(espected, enhancedFoodDecoratorApple.weigth());
@@ -59,12 +53,6 @@ class EnhancedFoodDecoratorTest {
     void initialValue_powerEnhancedFoodDecoratorBeansWithCod_returnValue() {
         double espected = 200;
         assertEquals(espected, enhancedFoodDecoratorBeansWithCod.power());
-    }
-
-    @Test
-    void initialValue_slotSpaceEnhancedFoodDecoratorBeansWithCod_returnValue() {
-        int espected = 1;
-        assertEquals(espected, enhancedFoodDecoratorBeansWithCod.slotSpace());
     }
 
     @Test
@@ -80,12 +68,6 @@ class EnhancedFoodDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpaceEnhancedFoodDecoratorBread_returnValue() {
-        int espected = 1;
-        assertEquals(espected, enhancedFoodDecoratorBread.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthEnhancedFoodDecoratorBread_returnValue() {
         int espected = 2;
         assertEquals(espected, enhancedFoodDecoratorBread.weigth());
@@ -98,12 +80,6 @@ class EnhancedFoodDecoratorTest {
     }
 
     @Test
-    void initialValue_slotSpaceEnhancedFoodDecoratorChicken_returnValue() {
-        int espected = 1;
-        assertEquals(espected, enhancedFoodDecoratorChicken.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthEnhancedFoodDecoratorChicken_returnValue() {
         int espected = 3;
         assertEquals(espected, enhancedFoodDecoratorChicken.weigth());
@@ -113,12 +89,6 @@ class EnhancedFoodDecoratorTest {
     void initialValue_powerEnhancedFoodDecoratorLeekCream_returnValue() {
         double espected = 100;
         assertEquals(espected, enhancedFoodDecoratorLeekCream.power());
-    }
-
-    @Test
-    void initialValue_slotSpaceEnhancedFoodDecoratorLeekCream_returnValue() {
-        int espected = 1;
-        assertEquals(espected, enhancedFoodDecoratorLeekCream.slotSpace());
     }
 
     @Test

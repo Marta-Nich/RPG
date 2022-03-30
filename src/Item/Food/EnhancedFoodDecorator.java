@@ -5,7 +5,6 @@ import Character.Pj;
 public class EnhancedFoodDecorator extends Food {
     private final Food food;
     private int weigth;
-    private int slotSpace = 1;
 
     public EnhancedFoodDecorator(Food food) {
         this.food = food;
@@ -21,12 +20,6 @@ public class EnhancedFoodDecorator extends Food {
         weigth = food.weigth();
         return weigth;
     }
-
-    @Override
-    public int slotSpace() {
-        return slotSpace;
-    }
-
     @Override
     public void consumedBy(Pj pj) {
         if (pj.health() + (power()) <= pj.maxHealth()) {

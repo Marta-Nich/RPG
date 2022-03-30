@@ -19,12 +19,6 @@ class BeansWithCodTest {
     }
 
     @Test
-    void initialValue_slotSpaceBeansWithCod_returnValue() {
-        int espected = 1;
-        assertEquals(espected, beansWithCod.slotSpace());
-    }
-
-    @Test
     void initialValue_weigthBeansWithCod_returnValue() {
         int espected = 5;
         assertEquals(espected, beansWithCod.weigth());
