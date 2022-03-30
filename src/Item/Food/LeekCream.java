@@ -7,7 +7,7 @@ public class LeekCream extends Food implements IConsumable {
     private int weigth = 4;
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 

@@ -1,7 +1,7 @@
 package Item;
 
-import Inventory.Inventory;
+import Character.Pj;
 
 public interface IDropeable {
-    void dropBy(Inventory inventory);
+    void dropBy(Pj pj);
 }

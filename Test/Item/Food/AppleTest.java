@@ -21,7 +21,7 @@ class AppleTest {
     @Test
     void initialValue_weigthApple_returnValue() {
         int espected = 1;
-        assertEquals(espected, apple.weigth());
+        assertEquals(espected, apple.weigthItem());
     }
 
     @Test

@@ -22,12 +22,12 @@ class FoodMockTest {
     @Test
     void initialValue_weigthFoodMock_returnValue() {
         int espected = 0;
-        assertEquals(espected, foodMock.weigth());
+        assertEquals(espected, foodMock.weigthItem());
     }
 
     @Test
     void initialValue_powerFoodMock_returnValue() {
         int espected = 0;
-        assertEquals(espected, foodMock.weigth());
+        assertEquals(espected, foodMock.weigthItem());
     }
 }

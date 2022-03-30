@@ -33,7 +33,7 @@ class BootsTest {
     @Test
     void initialValue_weigthBoots_returnValue() {
         int espected = 3;
-        assertEquals(espected, boots.weigth());
+        assertEquals(espected, boots.weigthItem());
     }
 
     @Test

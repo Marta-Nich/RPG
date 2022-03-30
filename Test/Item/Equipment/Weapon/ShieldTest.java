@@ -45,7 +45,7 @@ class ShieldTest {
     @Test
     void initialValue_weigthShield_returnValue() {
         double espected = 6;
-        assertEquals(espected, shield.weigth());
+        assertEquals(espected, shield.weigthItem());
     }
 
     @Test

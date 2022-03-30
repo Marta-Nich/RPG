@@ -18,7 +18,12 @@ public class Sword extends Weapon {
     }
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
+        return weigth;
+    }
+
+    @Override
+    public int weigthEquip() {
         return weigth;
     }
 
@@ -31,6 +36,7 @@ public class Sword extends Weapon {
     public double getSpeed() {
         return speed;
     }
+
     @Override
     public double totalAttackBonus() {
         return powerAttack() * getSpeed();

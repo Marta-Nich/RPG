@@ -7,7 +7,7 @@ public class BeansWithCod extends Food implements IConsumable {
     private int weigth = 5;
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 

@@ -47,7 +47,7 @@ class PoisonousFoodDecoratorTest {
     @Test
     void initialValue_weigthPoisonousFoodDecoratorApple_returnValue() {
         int espected = 1;
-        assertEquals(espected, poisonousFoodDecoratorApple.weigth());
+        assertEquals(espected, poisonousFoodDecoratorApple.weigthItem());
     }
 
     @Test
@@ -59,7 +59,7 @@ class PoisonousFoodDecoratorTest {
     @Test
     void initialValue_weigthPoisonousFoodDecoratorBeansWithCod_returnValue() {
         int espected = 5;
-        assertEquals(espected, poisonousFoodDecoratorBeansWithCod.weigth());
+        assertEquals(espected, poisonousFoodDecoratorBeansWithCod.weigthItem());
     }
 
     @Test
@@ -71,7 +71,7 @@ class PoisonousFoodDecoratorTest {
     @Test
     void initialValue_weigthPoisonousFoodDecoratorBread_returnValue() {
         int espected = 2;
-        assertEquals(espected, poisonousFoodDecoratorBread.weigth());
+        assertEquals(espected, poisonousFoodDecoratorBread.weigthItem());
     }
 
     @Test
@@ -83,7 +83,7 @@ class PoisonousFoodDecoratorTest {
     @Test
     void initialValue_weigthPoisonousFoodDecoratorChicken_returnValue() {
         int espected = 3;
-        assertEquals(espected, poisonousFoodDecoratorChicken.weigth());
+        assertEquals(espected, poisonousFoodDecoratorChicken.weigthItem());
     }
 
     @Test
@@ -95,6 +95,6 @@ class PoisonousFoodDecoratorTest {
     @Test
     void initialValue_weigthPoisonousFoodDecoratorLeekCream_returnValue() {
         int espected = 4;
-        assertEquals(espected, poisonousFoodDecoratorLeekCream.weigth());
+        assertEquals(espected, poisonousFoodDecoratorLeekCream.weigthItem());
     }
 }

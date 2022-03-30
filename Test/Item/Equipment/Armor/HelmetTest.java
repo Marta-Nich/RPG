@@ -33,7 +33,7 @@ class HelmetTest {
     @Test
     void initialValue_weigthHelmet_returnValue() {
         int espected = 4;
-        assertEquals(espected, helmet.weigth());
+        assertEquals(espected, helmet.weigthItem());
     }
 
     @Test

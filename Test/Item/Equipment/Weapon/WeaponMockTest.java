@@ -45,7 +45,7 @@ class WeaponMockTest {
     @Test
     void initialValue_weigthWeaponMock_returnValue() {
         int espected = 0;
-        assertEquals(espected, weaponMock.weigth());
+        assertEquals(espected, weaponMock.weigthItem());
     }
 
     @Test

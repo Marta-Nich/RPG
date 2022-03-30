@@ -8,7 +8,7 @@ public class MiniorHealingPotionDecorator extends Potion {
     private final Potion potion;
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 

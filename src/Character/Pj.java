@@ -9,6 +9,8 @@ import Character.Stat.Strength;
 import Inventory.Inventory;
 import Item.IConsumable;
 import Inventory.Equipment;
+import Item.IDropeable;
+import Item.IPickable;
 
 public class Pj implements IDamageable {
     private String name;
@@ -49,20 +51,20 @@ public class Pj implements IDamageable {
     }
 
     //Peso que puede llevar en el inventario
-    public double maxWeigth() {
+    public  double maxWeigth() {
         return 3 * (strength.getValue() + constitution.getValue() + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
                 + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
     }
 
     //(Valor base Dexterity + bonif. raza + bonif.profesion)*2
-    public double velocity() {
-        return 2 * (dexterity.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
-                + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence));
+    public double velocity() {/*menos peso*/
+        return (2 * (dexterity.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence)));
     }
 
     //(Valor base Strength + bonif. raza + bonif.profesion)*2
     public double power() {    /*Mas totalBonus*/
-        return equipment.totalBonusAttack() + (2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+        return (2 * (strength.getValue() + race.modifier(strength) + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
                 + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution) + job.modifier(intelligence)));
     }
 
@@ -112,7 +114,7 @@ public class Pj implements IDamageable {
     @Override
     public void receivesDamage(double amount) {
         if (amount > 0) {
-            damage += (amount - equipment.totalBonusProtection());  /*Menos bonusProtection*/
+            damage += (amount);  /*Menos bonusProtection*/
             System.out.println(getName() + " received " + amount + " damage. Health: " + health() + "/" + maxHealth());
         }
     }
@@ -133,5 +135,13 @@ public class Pj implements IDamageable {
     public void consumes(IConsumable consumable) {
         consumable.consumedBy(this);
         System.out.println(getName() + " consumed: " + consumable);
+    }
+
+    public void putInventory(IPickable pickable) {
+        inventory.pickItem(pickable);
+    }
+
+    public void removeInventory(IDropeable dropeable) {
+        inventory.dropItem(dropeable);
     }
 }

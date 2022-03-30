@@ -45,7 +45,7 @@ class KnifeTest {
     @Test
     void initialValue_weigthKnife_returnValue() {
         double espected = 2;
-        assertEquals(espected, knife.weigth());
+        assertEquals(espected, knife.weigthItem());
     }
 
     @Test

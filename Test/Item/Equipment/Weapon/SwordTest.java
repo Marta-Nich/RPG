@@ -45,7 +45,7 @@ class SwordTest {
     @Test
     void initialValue_weigthSword_returnValue() {
         double espected = 5;
-        assertEquals(espected, sword.weigth());
+        assertEquals(espected, sword.weigthItem());
     }
 
     @Test

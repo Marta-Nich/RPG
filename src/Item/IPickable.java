@@ -1,9 +1,9 @@
 package Item;
 
-import Inventory.Inventory;
+import Character.Pj;
 
 public interface IPickable {
-    int weigth();
+    int weigthItem();
 
-    void pickUpBy(Inventory inventory);
+    void pickUpBy(Pj pj);
 }

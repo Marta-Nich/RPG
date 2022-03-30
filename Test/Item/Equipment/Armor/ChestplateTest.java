@@ -33,7 +33,7 @@ class ChestplateTest {
     @Test
     void initialValue_weigthChestplate_returnValue() {
         int espected = 7;
-        assertEquals(espected, chestplate.weigth());
+        assertEquals(espected, chestplate.weigthItem());
     }
 
     @Test

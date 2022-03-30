@@ -18,7 +18,12 @@ public class Bow extends Weapon {
     }
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
+        return weigth;
+    }
+
+    @Override
+    public int weigthEquip() {
         return weigth;
     }
 

@@ -10,7 +10,7 @@ public abstract class Potion extends Item implements IConsumable {
 
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 

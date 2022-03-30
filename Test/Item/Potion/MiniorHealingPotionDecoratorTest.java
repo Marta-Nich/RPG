@@ -23,7 +23,7 @@ class MiniorHealingPotionDecoratorTest {
     @Test
     void initialValue_weigthMinionHealingPotionDecorator_returnValue() {
         int espected = 1;
-        assertEquals(espected, miniorHealingPotionDecorator.weigth());
+        assertEquals(espected, miniorHealingPotionDecorator.weigthItem());
     }
 
     @Test

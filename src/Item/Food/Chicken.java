@@ -7,7 +7,7 @@ public class Chicken extends Food implements IConsumable {
     private int weigth = 3;
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 

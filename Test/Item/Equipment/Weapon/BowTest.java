@@ -45,7 +45,7 @@ class BowTest {
     @Test
     void initialValue_weigthBow_returnValue() {
         double espected = 5;
-        assertEquals(espected, bow.weigth());
+        assertEquals(espected, bow.weigthItem());
     }
 
     @Test

@@ -21,7 +21,7 @@ class HealingPotionTest {
     @Test
     void initialValue_weigthHealingPotion_returnValue() {
         int espected = 2;
-        assertEquals(espected, healingPotion.weigth());
+        assertEquals(espected, healingPotion.weigthItem());
     }
 
     @Test

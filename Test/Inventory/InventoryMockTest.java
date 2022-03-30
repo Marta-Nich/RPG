@@ -1,9 +1,8 @@
 package Inventory;
 
 import Character.Job.Archer;
-import Character.Job.JobMock;
+import Character.Pj;
 import Character.Race.Elf;
-import Character.Race.RaceMock;
 import Character.Stat.Constitution;
 import Character.Stat.Dexterity;
 import Character.Stat.Intelligence;
@@ -13,17 +12,18 @@ import Item.ItemMock;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import Character.Pj;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryMockTest {
     InventoryMock inventoryMock;
+    Pj pj;
 
     @BeforeEach
     void setUp() {
-        inventoryMock = new InventoryMock();
-           }
+        pj = new Pj("h", new Elf(), new Archer(), new Strength(5), new Dexterity(5), new Constitution(5), new Intelligence(54));
+        inventoryMock = new InventoryMock(pj);
+    }
 
     @AfterEach
     void tearDown() {
@@ -53,15 +53,16 @@ class InventoryMockTest {
 
     @Test
     void initialValue_weigthListIPickableInventory_returnWeigth() {
-        inventoryMock.pickItem(new Apple());
-        double espected = 1;
+        Apple apple = new Apple();
+        inventoryMock.pickItem(apple);
+        double espected = apple.weigthItem();
         assertEquals(espected, inventoryMock.weigthListIPickable());
     }
 
 
     @Test
     void initialValue_getMaxWeightInventory_returnWeigth() {
-        double espected = 30;
+        double espected = 60;
         assertEquals(espected, inventoryMock.maxWeight());
     }
 }

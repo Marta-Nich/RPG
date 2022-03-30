@@ -45,7 +45,7 @@ class WardhammerTest {
     @Test
     void initialValue_weigthWardhammer_returnValue() {
         int espected = 8;
-        assertEquals(espected, wardhammer.weigth());
+        assertEquals(espected, wardhammer.weigthItem());
     }
 
     @Test

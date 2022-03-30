@@ -45,7 +45,7 @@ class AxeTest {
     @Test
     void initialValue_weigthAxe_returnValue() {
         double espected = 7;
-        assertEquals(espected, axe.weigth());
+        assertEquals(espected, axe.weigthItem());
     }
 
     @Test

@@ -12,7 +12,7 @@ public class Necklace extends Jewelry {
     }
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 
@@ -24,6 +24,11 @@ public class Necklace extends Jewelry {
     @Override
     public int protection() {
         return protection;
+    }
+
+    @Override
+    public int weigthEquip() {
+        return weigth;
     }
 
 }

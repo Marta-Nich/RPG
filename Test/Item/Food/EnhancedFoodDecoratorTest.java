@@ -46,7 +46,7 @@ class EnhancedFoodDecoratorTest {
     @Test
     void initialValue_weigthEnhancedFoodDecoratorApple_returnValue() {
         int espected = 1;
-        assertEquals(espected, enhancedFoodDecoratorApple.weigth());
+        assertEquals(espected, enhancedFoodDecoratorApple.weigthItem());
     }
 
     @Test
@@ -58,7 +58,7 @@ class EnhancedFoodDecoratorTest {
     @Test
     void initialValue_weigthEnhancedFoodDecoratorBeansWithCod_returnValue() {
         int espected = 5;
-        assertEquals(espected, enhancedFoodDecoratorBeansWithCod.weigth());
+        assertEquals(espected, enhancedFoodDecoratorBeansWithCod.weigthItem());
     }
 
     @Test
@@ -70,7 +70,7 @@ class EnhancedFoodDecoratorTest {
     @Test
     void initialValue_weigthEnhancedFoodDecoratorBread_returnValue() {
         int espected = 2;
-        assertEquals(espected, enhancedFoodDecoratorBread.weigth());
+        assertEquals(espected, enhancedFoodDecoratorBread.weigthItem());
     }
 
     @Test
@@ -82,7 +82,7 @@ class EnhancedFoodDecoratorTest {
     @Test
     void initialValue_weigthEnhancedFoodDecoratorChicken_returnValue() {
         int espected = 3;
-        assertEquals(espected, enhancedFoodDecoratorChicken.weigth());
+        assertEquals(espected, enhancedFoodDecoratorChicken.weigthItem());
     }
 
     @Test
@@ -94,6 +94,6 @@ class EnhancedFoodDecoratorTest {
     @Test
     void initialValue_weigthEnhancedFoodDecoratorLeekCream_returnValue() {
         int espected = 4;
-        assertEquals(espected, enhancedFoodDecoratorLeekCream.weigth());
+        assertEquals(espected, enhancedFoodDecoratorLeekCream.weigthItem());
     }
 }

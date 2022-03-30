@@ -22,8 +22,13 @@ public abstract class Armor extends Item implements IEquipable {
     }
 
     @Override
-    public int weigth() {
-        return super.weigth();
+    public int weigthItem() {
+        return 0;
+    }
+
+    @Override
+    public int weigthEquip() {
+        return 0;
     }
 
     @Override

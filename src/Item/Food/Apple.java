@@ -8,7 +8,7 @@ public class Apple extends Food implements IConsumable {
     private int weigth = 1;
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 

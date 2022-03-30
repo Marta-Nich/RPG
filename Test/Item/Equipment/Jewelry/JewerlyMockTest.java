@@ -33,7 +33,7 @@ class JewerlyMockTest {
     @Test
     void initialValue_weigthJewerlyMock_returnValue() {
         int espected = 0;
-        assertEquals(espected, jewerlyMock.weigth());
+        assertEquals(espected, jewerlyMock.weigthItem());
     }
 
     @Test

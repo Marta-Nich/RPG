@@ -45,7 +45,7 @@ class WandTest {
     @Test
     void initialValue_weigthWand_returnValue() {
         int espected = 4;
-        assertEquals(espected, wand.weigth());
+        assertEquals(espected, wand.weigthItem());
     }
 
     @Test

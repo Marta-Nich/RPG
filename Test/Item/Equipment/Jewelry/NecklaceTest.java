@@ -33,7 +33,7 @@ class NecklaceTest {
     @Test
     void initialValue_weigthNecklace_returnValue() {
         int espected = 2;
-        assertEquals(espected, necklace.weigth());
+        assertEquals(espected, necklace.weigthItem());
     }
 
     @Test

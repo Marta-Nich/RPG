@@ -10,7 +10,7 @@ public abstract class Food extends Item implements IConsumable {
     private double power = 0;
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
         return weigth;
     }
 

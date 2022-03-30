@@ -16,8 +16,8 @@ public class EnhancedFoodDecorator extends Food {
     }
 
     @Override
-    public int weigth() {
-        weigth = food.weigth();
+    public int weigthItem() {
+        weigth = food.weigthItem();
         return weigth;
     }
     @Override

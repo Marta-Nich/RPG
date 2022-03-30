@@ -22,7 +22,7 @@ class BreadTest {
     @Test
     void initialValue_weigthBread_returnValue() {
         int espected = 2;
-        assertEquals(espected, bread.weigth());
+        assertEquals(espected, bread.weigthItem());
     }
 
     @Test

@@ -21,7 +21,7 @@ class PotionMockTest {
     @Test
     void initialValue_weigthPotion_returnValue() {
         int espected = 0;
-        assertEquals(espected, potionMock.weigth());
+        assertEquals(espected, potionMock.weigthItem());
     }
 
     @Test

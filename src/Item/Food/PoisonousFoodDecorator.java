@@ -16,8 +16,8 @@ public class PoisonousFoodDecorator extends Food {
     }
 
     @Override
-    public int weigth() {
-        weigth = food.weigth();
+    public int weigthItem() {
+        weigth = food.weigthItem();
         return weigth;
     }
 

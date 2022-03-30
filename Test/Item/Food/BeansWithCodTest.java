@@ -21,7 +21,7 @@ class BeansWithCodTest {
     @Test
     void initialValue_weigthBeansWithCod_returnValue() {
         int espected = 5;
-        assertEquals(espected, beansWithCod.weigth());
+        assertEquals(espected, beansWithCod.weigthItem());
     }
 
     @Test

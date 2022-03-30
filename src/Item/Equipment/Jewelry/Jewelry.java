@@ -23,12 +23,16 @@ public abstract class Jewelry extends Item implements IEquipable {
     @Override
     public void equipBy(Equipment equipment) {
         if (equipment.enters(this)) {
-            equipment.getJewelries().add(this);
         }
     }
 
     @Override
-    public int weigth() {
-        return super.weigth();
+    public int weigthEquip() {
+        return 0;
+    }
+
+    @Override
+    public int weigthItem() {
+        return super.weigthItem();
     }
 }

@@ -10,4 +10,6 @@ public interface IEquipable {
     int slotSpace();
 
     void equipBy(Equipment equipment);
+
+    int weigthEquip();
 }

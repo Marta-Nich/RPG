@@ -16,7 +16,12 @@ public abstract class Weapon extends Item implements IEquipable {
     }
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
+        return 0;
+    }
+
+    @Override
+    public int weigthEquip() {
         return 0;
     }
 
@@ -38,7 +43,6 @@ public abstract class Weapon extends Item implements IEquipable {
     @Override
     public void equipBy(Equipment equipment) {
         if (equipment.enters(this)) {
-            equipment.getWeapons().add(this);
         }
     }
 

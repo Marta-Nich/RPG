@@ -33,7 +33,7 @@ class LeggingsTest {
     @Test
     void initialValue_weigthLeggings_returnValue() {
         int espected = 6;
-        assertEquals(espected, leggings.weigth());
+        assertEquals(espected, leggings.weigthItem());
     }
 
     @Test

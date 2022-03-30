@@ -32,7 +32,7 @@ class ArmorMockTest {
     @Test
     void initialValue_weigthArmorMock_returnValue() {
         int espected = 0;
-        assertEquals(espected, armorMock.weigth());
+        assertEquals(espected, armorMock.weigthItem());
     }
 
     @Test

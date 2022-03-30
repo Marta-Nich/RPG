@@ -19,7 +19,12 @@ public class Helmet extends Armor {
     }
 
     @Override
-    public int weigth() {
+    public int weigthItem() {
+        return weigth;
+    }
+
+    @Override
+    public int weigthEquip() {
         return weigth;
     }
 
@@ -31,7 +36,6 @@ public class Helmet extends Armor {
     @Override
     public void equipBy(Equipment equipment) {
         if (equipment.enters(this)) {
-            equipment.getHelmets().add(this);
         }
     }
 }

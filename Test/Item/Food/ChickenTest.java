@@ -21,7 +21,7 @@ class ChickenTest {
     @Test
     void initialValue_weigthChicken_returnValue() {
         int espected = 3;
-        assertEquals(espected, chicken.weigth());
+        assertEquals(espected, chicken.weigthItem());
     }
 
     @Test
