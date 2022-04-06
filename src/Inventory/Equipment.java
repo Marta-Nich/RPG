@@ -229,22 +229,34 @@ public class Equipment {
 
     public void unEquipIEquipable(IEquipable eqipable) {
         if (noNullWeapons()) {
-            weapons.remove(eqipable);
+            if (isWeapon(eqipable)) {
+                weapons.remove(eqipable);
+            }
         }
         if (noNullJewelries()) {
-            jewelries.remove(eqipable);
+            if (isJewelries(eqipable)) {
+                jewelries.remove(eqipable);
+            }
         }
         if (noNullBoots()) {
-            boots.remove(eqipable);
+            if (isBoots(eqipable)) {
+                boots.remove(eqipable);
+            }
         }
         if (noNullChestplates()) {
-            chestplates.remove(eqipable);
+            if (isChestplates(eqipable)) {
+                chestplates.remove(eqipable);
+            }
         }
         if (noNullHelmets()) {
-            helmets.remove(eqipable);
+            if (isHelmet(eqipable)) {
+                helmets.remove(eqipable);
+            }
         }
         if (noNullLeggins()) {
-            leggings.remove(eqipable);
+            if (isLeggins(eqipable)) {
+                leggings.remove(eqipable);
+            }
         }
     }
 }
