@@ -60,15 +60,27 @@ public class Pj implements IDamageable {
 
     //(Valor base Dexterity + bonif. raza + bonif.profesion)*2
     public double velocity() {   /*menos peso*/
+        if (equipment != null) {
+            return (2 * (dexterity.getValue() + race.modifier(strength)
+                    + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                    + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution)
+                    + job.modifier(intelligence))) - equipment.totalBonusWeigth();
+        }
         return (2 * (dexterity.getValue() + race.modifier(strength)
                 + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
                 + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution)
-                + job.modifier(intelligence))) /*- equipment.totalBonusWeigth()*/;
+                + job.modifier(intelligence)));
     }
 
     //(Valor base Strength + bonif. raza + bonif.profesion)*2
     public double power() {    /*Mas totalBonus*/
-        return /* equipment.totalBonusAttack() +*/ (2 * (strength.getValue() + race.modifier(strength)
+        if (equipment != null) {
+            return equipment.totalBonusAttack() + (2 * (strength.getValue() + race.modifier(strength)
+                    + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
+                    + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution)
+                    + job.modifier(intelligence)));
+        }
+        return (2 * (strength.getValue() + race.modifier(strength)
                 + race.modifier(dexterity) + race.modifier(constitution) + race.modifier(intelligence)
                 + job.modifier(strength) + job.modifier(dexterity) + job.modifier(constitution)
                 + job.modifier(intelligence)));
@@ -122,8 +134,13 @@ public class Pj implements IDamageable {
     @Override
     public void receivesDamage(double amount) {
         if (amount > 0) {
-            damage += (amount /*- equipment.totalBonusProtection()*/);  /*Menos bonusProtection*/
-            System.out.println(getName() + " received " + amount + " damage. Health: " + health() + "/" + maxHealth());
+            if (equipment != null) {
+                damage += (amount - equipment.totalBonusProtection());  /*Menos bonusProtection*/
+                System.out.println(getName() + " received " + amount + " damage. Health: " + health() + "/" + maxHealth());
+            } else {
+                damage += (amount);
+                System.out.println(getName() + " received " + amount + " damage. Health: " + health() + "/" + maxHealth());
+            }
         }
     }
 

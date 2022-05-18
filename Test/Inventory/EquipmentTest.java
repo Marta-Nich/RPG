@@ -28,7 +28,6 @@ class EquipmentTest {
         pj = new Pj("h", new Elf(), new Archer(), new Strength(5), new Dexterity(5), new Constitution(5), new Intelligence(54));
         equipment = new Equipment(pj);
         sword = new Sword();
-        necklace = new Necklace();
         boots = new Boots();
     }
 
@@ -51,26 +50,23 @@ class EquipmentTest {
     void initialValue_totalBonusAttackEquipment_retunValue() {
         equipment.equipIEquipable(boots);
         equipment.equipIEquipable(sword);
-        equipment.equipIEquipable(necklace);
-        double especed = 14;
-        assertEquals(especed,equipment.totalBonusAttack());
+        double espected = 10;
+        assertEquals(espected, equipment.totalBonusAttack());
     }
 
     @Test
     void initialValue_totalBonusWeigthEquipment_retunValue() {
         equipment.equipIEquipable(boots);
         equipment.equipIEquipable(sword);
-        equipment.equipIEquipable(necklace);
-        double especed = 20;
-        assertEquals(especed,equipment.totalBonusWeigth());
+        double espected = 16;
+        assertEquals(espected, equipment.totalBonusWeigth());
     }
 
     @Test
     void initialValue_totalBonusProtectionEquipment_retunValue() {
         equipment.equipIEquipable(boots);
         equipment.equipIEquipable(sword);
-        equipment.equipIEquipable(necklace);
-        double especed = 16;
-        assertEquals(especed,equipment.totalBonusProtection());
+        double espected = 14;
+        assertEquals(espected, equipment.totalBonusProtection());
     }
 }
